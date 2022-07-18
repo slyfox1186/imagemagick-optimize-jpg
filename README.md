@@ -11,7 +11,7 @@ Open cmd.exe as an administrator and change the working directory to the same di
 # Download the latest windows version of imagemagick
 ```
 curl.exe "https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-43-Q16-HDRI-x64-dll.exe" > "ImageMagick.exe"
-start ""
+start "" /wait "ImageMagick.exe"
 ```
 
 # Download the optimized batch script.
