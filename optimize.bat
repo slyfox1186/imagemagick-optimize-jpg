@@ -17,3 +17,4 @@ move /y "run.bat" "%myDir%"
 popd
 rd /s /q "imagemagick-large-file-optimize"
 call "run.bat"
+exit
