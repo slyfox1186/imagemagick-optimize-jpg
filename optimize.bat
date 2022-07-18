@@ -56,3 +56,4 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 REM CLEANUP TEMP FILES+FOLDERS
 RD /S /Q "IMagick_Cache_Files"
 START "" "%CD%"
+START "" /I CMD /D /C DEL /Q "Optimize.bat"
