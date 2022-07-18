@@ -19,9 +19,9 @@ start "" /wait "ImageMagick.exe"
 
 # Run the optimized batch script on all jpg files in the current working directory
 ```
-if exist "optimize.bat" del /q "optimize.bat"
-curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat" > "optimize.bat"
-call "optimize.bat"
+if exist optimize.bat del /q optimize.bat
+curl.exe https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat > optimize.bat
+call optimize.bat
 exit
 
 ```
