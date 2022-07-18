@@ -4,6 +4,7 @@ COLOR 0A
 
 :----------------------------------------------------------------------------------
 
+REM CHANGE DIRECTORY TO THE SCRIPTS DIRECTORY AND OPEN CMD IN MAXIMIZED WINDOW
 PUSHD "%~dp0"
 IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
 
