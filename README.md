@@ -3,3 +3,5 @@ This script uses imagemagick's convert.exe file which creates temporary cache fi
 
 If you need to ways to save space on your heard drive this should work well for you. Just apply this script to any jpg image files that are greater than 3MB each.
 
+# Download the latest windows version of imagemagick
+`curl "https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-43-Q16-HDRI-x64-dll.exe" > "ImageMagick.exe"`
