@@ -5,8 +5,8 @@ If you need to ways to save space on your heard drive this should work well for 
 
 Just run the command below in the same folder as the jpg file(s) `(make sure file sizes are at least >= 3MB each)`
 
-# You MUST change the variables in the `optimize.bat` script to point to the file `convert.exe` if it is not already in the windows path
-# This WILL overwrite the original pictures so it is highly advised to make backups.
+You MUST change the variables in the `optimize.bat` script to point to the file `convert.exe` if it is not already in the windows path
+This WILL overwrite the original pictures so it is highly advised to make backups.
 
 To use the below commands:
 Open `cmd.exe as an administrator` and change the working directory to the same directory your jpg files
