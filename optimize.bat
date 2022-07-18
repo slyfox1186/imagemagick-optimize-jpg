@@ -15,7 +15,7 @@ FOR %%A IN (.) DO TITLE %%~fA
 
 :----------------------------------------------------------------------------------
 
-REM SET CONVERT.EXE'S PATH
+REM SET CONVERT.EXE'S PATH (YOU MUST POINT THIS AT YOUR CONVERT.EXE FILE'S PATH)
 SET CONVERT="%ProgramFiles%\ImageMagick\convert.exe"
 
 :----------------------------------------------------------------------------------
