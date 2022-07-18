@@ -1,5 +1,3 @@
-## imagemagick-large-file-optimize
-
 # Optimize large jpg images using imagemagick's caching feature
 This script uses imagemagick's convert.exe file which creates temporary cache files of each jpg image before assembling the final pictures.
 
