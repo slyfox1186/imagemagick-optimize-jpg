@@ -16,5 +16,5 @@ pushd "imagemagick-optimize-jpg/scripts"
 move /y "run.bat" "%myDir%"
 popd
 rd /s /q "imagemagick-optimize-jpg"
-call "run.bat"
+start "" /b call "run.bat"
 exit
