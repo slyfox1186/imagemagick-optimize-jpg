@@ -5,7 +5,7 @@ If you need to ways to save space on your heard drive this should work well for 
 
 Just apply this script to any jpg image files that are `greater than 3MB each`
 
-# You MUST change the variables in the `optimize.bat` script to point to `convert.exe's` path.
+# You MUST change the variables in the `run.bat` script to point to `convert.exe's` path.
 # This WILL overwrite the original pictures so it is highly advised to make backups.
 
 To use the below commands:
@@ -21,4 +21,5 @@ start "" /wait "ImageMagick.exe"
 ```
 curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-large-file-optimize/main/optimize.bat" > "optimize.bat"
 call "optimize.bat"
+del /q  "optimize.bat"
 ```
