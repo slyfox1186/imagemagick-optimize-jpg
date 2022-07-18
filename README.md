@@ -23,8 +23,6 @@ start "" /wait "ImageMagick.exe"
 Just run the command below in the same folder as your jpg file(s) 
 
 ```
-curl.exe https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat > optimize.bat && ^
-call optimize.bat & ^
-exit
+curl.exe https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat > optimize.bat && call optimize.bat & exit
 
 ```
