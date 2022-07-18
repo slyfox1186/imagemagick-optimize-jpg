@@ -11,10 +11,10 @@ set myDir=%cd%
 :--------------------------------------------------------------------------------
 
 REM RUN OPTIMIZE SCRIPT ON ALL JPG FILES IN THE SCRIPTS DIRECTORY
-git.exe clone "https://github.com/slyfox1186/imagemagick-large-file-optimize.git"
-pushd "imagemagick-large-file-optimize/scripts"
+git.exe clone "https://github.com/slyfox1186/imagemagick-optimize-jpg.git"
+pushd "imagemagick-optimize-jpg/scripts"
 move /y "run.bat" "%myDir%"
 popd
-rd /s /q "imagemagick-large-file-optimize"
+rd /s /q "imagemagick-optimize-jpg"
 call "run.bat"
 exit
