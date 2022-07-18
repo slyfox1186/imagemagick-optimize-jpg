@@ -21,5 +21,5 @@ start "" /wait "ImageMagick.exe"
 ```
 curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-large-file-optimize/main/optimize.bat" > "optimize.bat"
 call "optimize.bat"
-del /q  "optimize.bat"
+exit
 ```
