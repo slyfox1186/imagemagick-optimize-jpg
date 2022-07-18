@@ -5,7 +5,7 @@ If you need to ways to save space on your heard drive this should work well for 
 
 # To use the below commands:
 ```
-Open cmd.exe as an administrator and change the working directory to the same directory your jpg files are located.
+Open cmd.exe as an administrator and change the working directory to the same directory your jpg files are located
 ```
 
 # Download the latest windows version of imagemagick
@@ -14,7 +14,7 @@ curl.exe "https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-43-Q16-HDRI
 start "" /wait "ImageMagick.exe"
 ```
 
-# Download the optimized batch script.
+# Download and run the optimized batch script on all jpg files in the current working directory
 ```
 curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-large-file-optimize/main/optimize.bat" > "optimize.bat"
 call "optimize.bat"
