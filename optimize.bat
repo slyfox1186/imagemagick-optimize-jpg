@@ -20,13 +20,8 @@ SET CONVERT="%ProgramFiles%\ImageMagick\convert.exe"
 
 :----------------------------------------------------------------------------------
 
-REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST
-IF EXIST "%CD%\IMagick_Cache_Files\*.mpc" GOTO CONVERT
-
-:----------------------------------------------------------------------------------
-
-REM CREATE TEMP FOLDERS
-IF NOT EXIST "%CD%\IMagick_Cache_Files" MD "%CD%\IMagick_Cache_Files"
+REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST AND MAKE TEMP DIRECTORY
+IF EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
 
 :----------------------------------------------------------------------------------
 
@@ -38,7 +33,7 @@ FOR %%G IN (*.jpg) DO (
 		ECHO=
 		%CONVERT% "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
 		-unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
-		-auto-level -enhance -interlace none -colorspace sRGB "%CD%\IMagick_Cache_Files\%%~nG.mpc"
+		-auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
 		CLS
 	)
 )
@@ -48,10 +43,10 @@ FOR %%G IN (*.jpg) DO (
 REM CONVERT CACHE FILES INTO JPG
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
-FOR %%G IN ("%CD%\IMagick_Cache_Files\*.mpc") DO (
+FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 	ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
 	ECHO=
-	%CONVERT% "%%G" -monitor "%CD%\%%~nG.jpg"
+	%CONVERT% "%%G" -monitor "%%~nG.jpg"
 	CLS
 	)
 )
@@ -59,5 +54,5 @@ FOR %%G IN ("%CD%\IMagick_Cache_Files\*.mpc") DO (
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES+FOLDERS
-RD /S /Q "%CD%\IMagick_Cache_Files"
+RD /S /Q "IMagick_Cache_Files"
 START "" "%CD%"
