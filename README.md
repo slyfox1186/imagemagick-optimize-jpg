@@ -17,7 +17,7 @@ curl.exe "https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-43-Q16-HDRI
 start "" /wait "ImageMagick.exe"
 ```
 
-# Run the optimized batch script on all jpg files in the current working directory
+# Optimize all jpg files in the current working directory
 
 Just run the command below in the same folder as the jpg file(s) 
 
