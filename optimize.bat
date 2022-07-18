@@ -49,7 +49,7 @@ REM CONVERT CACHE FILES INTO JPG
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN ("%CD%\IMagick_Cache_Files\*.mpc") DO (
-	ECHO Converting: %%~nG.cache ^>^> "%CD%\%%~nG.jpg"
+	ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
 	ECHO=
 	%CONVERT% "%%G" -monitor "%CD%\%%~nG.jpg"
 	CLS
