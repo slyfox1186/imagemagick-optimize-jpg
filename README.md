@@ -9,7 +9,7 @@ You MUST change the variables in the `optimize.bat` script to point to the file 
 
 This WILL overwrite the original pictures so it is highly advised to make backups.
 
-To use the below commands: `Open cmd.exe as an administrator`
+To use the below commands: `Open cmd.exe as an administrator` to the jpg file(s) directory
 
 # Download the latest windows version of imagemagick
 ```
