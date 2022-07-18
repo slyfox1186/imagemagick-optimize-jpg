@@ -19,7 +19,7 @@ start "" /wait "ImageMagick.exe"
 
 # Download and run the optimized batch script on all jpg files in the current working directory
 ```
-curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-large-file-optimize/main/optimize.bat" > "optimize.bat"
+curl.exe "https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat" > "optimize.bat"
 call "optimize.bat"
 exit
 ```
