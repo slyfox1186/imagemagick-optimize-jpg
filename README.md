@@ -6,6 +6,7 @@ If you need ways to save space on your hard drive this should work well for you.
 Make sure file sizes are `at least >= 3MB each`
 
 You MUST change the variables in the `optimize.bat` script to point to the file `convert.exe` if it is not already in the windows path
+
 This WILL overwrite the original pictures so it is highly advised to make backups.
 
 To use the below commands: `Open cmd.exe as an administrator`
