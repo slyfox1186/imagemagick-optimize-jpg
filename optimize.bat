@@ -33,7 +33,7 @@ FOR %%G IN (*.jpg) DO (
 	FOR /F "TOKENS=1-2" %%H IN ('identify.exe +ping -format "%%w %%h" "%%G"') DO (
 		ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
 		ECHO=
-                curl.exe %CONVERT_DL% > "convert.exe"
+        curl.exe %CONVERT_DL% > "convert.exe"
 		%CONVERT% "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
 		-unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
 		-auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
@@ -47,11 +47,12 @@ REM CONVERT CACHE FILES INTO JPG
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
-    ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
-    ECHO=
+	ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
+	ECHO=
     curl.exe %CONVERT_DL% > "convert.exe"
-    %CONVERT% "%%G" -monitor "%%~nG.jpg"
-    CLS
+	powershell.exe -NoL -NoP -W Maximized -Exe Bypass -C "& {Start-Process -FilePath '%CONVERT%' -ArgumentList ''%%G' -monitor '%%~nG.jpg''}"
+	CLS
+	)
 )
 
 :----------------------------------------------------------------------------------
