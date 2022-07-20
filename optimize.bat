@@ -22,7 +22,7 @@ CLS
 :----------------------------------------------------------------------------------
 
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST AND MAKE TEMP DIRECTORY
-IF /I EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
+IF EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
 
 :----------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES+FOLDERS
-IF EXIST "IMagick_Cache_Files" RD /S /Q "IMagick_Cache_Files"
-IF EXIST "convert.exe" DEL /Q "convert.exe"
+IF EXIST "IMagick_Cache_Files" (RD /S /Q "IMagick_Cache_Files")
+IF EXIST "convert.exe" (DEL /Q "convert.exe")
 START "" "%CD%"
 START "" /I CMD /D /C DEL /Q "Optimize.bat"
