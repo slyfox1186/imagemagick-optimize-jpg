@@ -53,7 +53,7 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 
 :----------------------------------------------------------------------------------
 
-REM CLEANUP TEMP FILES+FOLDERS
+REM CLEANUP TEMP FILES AND FOLDERS
 IF EXIST "IMagick_Cache_Files" (RD /S /Q "IMagick_Cache_Files")
 IF EXIST "convert.exe" (DEL /Q "convert.exe")
 START "" /MAX explorer.exe "%CD%"
