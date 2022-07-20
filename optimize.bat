@@ -17,7 +17,7 @@ FOR %%A IN (.) DO TITLE %%~nxA
 
 REM SET CONVERT.EXE'S PATH (YOU MUST POINT THIS AT YOUR CONVERT.EXE FILE PATH)
 REM SET CONVERT="%ProgramFiles%\ImageMagick\convert.exe"
-SET CONVERT="%CD%\convert.exe"
+SET CONVERT=%CD%\convert.exe
 SET CONVERT_DL="https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe"
 
 :----------------------------------------------------------------------------------
