@@ -1,20 +1,13 @@
-# Optimize large jpg images using imagemagick's caching feature
+# Optimize large jpg images using imagemagick's convert.exe and caching features
 This script uses imagemagick's convert.exe file which creates temporary cache files of each jpg image before assembling the final pictures.
 
 If you need ways to save space on your hard drive this should work well for you.
 
 Make sure file sizes are `at least >= 3MB each`
 
-This script WILL overwrite the original pictures so it is highly advised to make backups.
+This script `WILL overwrite` the original pictures so it is highly advised to make backups.
 
 To use the below commands: `Open cmd.exe as an administrator` to the jpg file(s) directory
-
-# Download the latest windows version of imagemagick
-```
-curl.exe "https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-43-Q16-HDRI-x64-dll.exe" > "ImageMagick.exe"
-start "" /wait "ImageMagick.exe"
-
-```
 
 # Optimize all jpg files in the current working directory
 
