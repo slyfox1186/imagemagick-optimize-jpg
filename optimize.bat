@@ -47,7 +47,7 @@ REM CONVERT CACHE FILES INTO JPG
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
-	ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
+	ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
 	ECHO=
     curl.exe %CONVERT_DL% > "convert.exe"
 	powershell.exe -NoL -NoP -W Maximized -Exe Bypass -C "& {Start-Process -FilePath '%CONVERT%' -ArgumentList ''%%G' -monitor '%%~nG.jpg''}"
