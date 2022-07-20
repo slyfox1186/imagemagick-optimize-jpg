@@ -19,6 +19,7 @@ REM SET CONVERT.EXE'S PATH (YOU MUST POINT THIS AT YOUR CONVERT.EXE FILE PATH)
 SET CONVERT="convert.exe"
 SET CONVERT_DL="https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe"
 IF NOT EXIST "%CONVERT%" wget -c -O "%CONVERT%" %CONVERT_DL%
+CLS
 
 :----------------------------------------------------------------------------------
 
