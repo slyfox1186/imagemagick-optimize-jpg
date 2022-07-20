@@ -16,15 +16,13 @@ FOR %%A IN (.) DO TITLE %%~nxA
 :----------------------------------------------------------------------------------
 
 REM SET CONVERT.EXE'S PATH (YOU MUST POINT THIS AT YOUR CONVERT.EXE FILE PATH)
-SET CONVERT="convert.exe"
-SET CONVERT_DL="https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe"
-IF NOT EXIST "%CONVERT%" wget -c -O "%CONVERT%" %CONVERT_DL%
+IF NOT EXIST "convert.exe" (wget.exe -c -O "convert.exe" "https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe")
 CLS
 
 :----------------------------------------------------------------------------------
 
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST AND MAKE TEMP DIRECTORY
-IF EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
+IF /I EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
 
 :----------------------------------------------------------------------------------
 
@@ -32,12 +30,12 @@ REM FIND ALL JPG FILES AND CONVERT THEM TO TEMPORARY CACHE FORMAT
 SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN (*.jpg) DO (
     FOR /F "TOKENS=1-2" %%H IN ('identify.exe +ping -format "%%w %%h" "%%G"') DO (
-         ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
-	ECHO=
-	%CONVERT% "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
-	-unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
-	-auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
-	CLS
+        ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
+        ECHO=
+        convert.exe "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
+        -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
+        -auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
+        CLS
 	)
 )
 
@@ -49,7 +47,7 @@ SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
     ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
     ECHO=
-    %CONVERT% "%%G" -monitor "%%~nG.jpg"
+    convert.exe "%%G" -monitor "%%~nG.jpg"
     CLS
     )
 )
