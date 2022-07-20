@@ -34,7 +34,7 @@ FOR %%G IN (*.jpg) DO (
 		ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
 		ECHO=
         curl.exe %CONVERT_DL% > "convert.exe"
-		%CONVERT% "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
+		convert.exe "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
 		-unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
 		-auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
 		CLS
@@ -50,7 +50,7 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 	ECHO Converting: %%~nG.cache ^>^> "%%~nG.jpg"
 	ECHO=
     curl.exe %CONVERT_DL% > "convert.exe"
-	%CONVERT% "%%G" -monitor "%%~nG.jpg"
+	convert.exe "%%G" -monitor "%%~nG.jpg"
 	CLS
 	)
 )
