@@ -11,7 +11,7 @@ To use the below commands: `Open cmd.exe as an administrator` to the jpg file(s)
 
 # Optimize all jpg files in the current working directory
 
-Just run the command below in the same folder as your jpg file(s) 
+Just run the commands below in the same folder as your jpg file(s) 
 
 ```
 wget.exe -c -O convert.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/blob/main/convert.exe?raw=true && ^
