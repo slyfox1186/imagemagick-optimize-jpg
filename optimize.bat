@@ -15,7 +15,7 @@ FOR %%A IN (.) DO TITLE %%~nxA
 
 :----------------------------------------------------------------------------------
 
-REM SET CONVERT.EXE'S PATH (YOU MUST POINT THIS AT YOUR CONVERT.EXE FILE PATH)
+REM CREATE CONVERT.EXE IN THE SCRIPT'S DIRECTORY
 IF NOT EXIST "convert.exe" (wget.exe -c -O "convert.exe" "https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe")
 CLS
 
