@@ -49,7 +49,6 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
     ECHO=
     convert.exe "%%G" -monitor "%%~nG.jpg"
     CLS
-    )
 )
 
 :----------------------------------------------------------------------------------
@@ -57,5 +56,5 @@ FOR %%G IN ("IMagick_Cache_Files\*.mpc") DO (
 REM CLEANUP TEMP FILES+FOLDERS
 IF EXIST "IMagick_Cache_Files" (RD /S /Q "IMagick_Cache_Files")
 IF EXIST "convert.exe" (DEL /Q "convert.exe")
-START "" "%CD%"
+START "" /MAX explorer.exe "%CD%"
 START "" /I CMD /D /C DEL /Q "Optimize.bat"
