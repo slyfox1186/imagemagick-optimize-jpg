@@ -15,12 +15,6 @@ FOR %%A IN (.) DO TITLE %%~nxA
 
 :----------------------------------------------------------------------------------
 
-REM CREATE CONVERT.EXE IN THE SCRIPT'S DIRECTORY
-IF NOT EXIST "convert.exe" (wget.exe -c -O "convert.exe" "https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe")
-CLS
-
-:----------------------------------------------------------------------------------
-
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY
 IF EXIST "IMagick_Cache_Files\*.mpc" (GOTO CONVERT) ELSE (MD "IMagick_Cache_Files")
 
