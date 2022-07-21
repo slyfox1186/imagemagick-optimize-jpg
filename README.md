@@ -2,9 +2,9 @@
 
 This script uses `ImageMagick's convert.exe` which creates two temporary cache files of each image before re-assembling the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you
 
-Make sure file sizes are `at least >= 3MB each`
+Make sure the file sizes are at least `>= 3MB per image` to get the best returns on space savings.
 
-This script `WILL overwrite the original pictures` so it is `highly advised to make backups`
+This script will `OVERWRITE the original pictures` so it is `highly advised to make backups` of your files before running!
 
 `To use the below commands open cmd.exe as an administrator to the jpg file(s) directory`
 
