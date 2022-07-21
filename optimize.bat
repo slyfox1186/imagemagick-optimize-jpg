@@ -13,6 +13,8 @@ IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
 REM SET THE TITLE OF THE WINDOW
 FOR %%A IN (.) DO TITLE %%~nxA
 
+SET CONVERT="imagemagick-optimize-jpg\convert.exe"
+
 :----------------------------------------------------------------------------------
 
 REM SKIP AHEAD IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY IF NOT EXIST
@@ -25,7 +27,7 @@ FOR %%G IN (*.jpg) DO (
     FOR /F "TOKENS=1-2" %%H IN ('identify.exe +ping -format "%%w %%h" "%%G"') DO (
         ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
         ECHO=
-        convert.exe "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail %%Hx%%I -strip ^
+        %CONVERT% "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail %%Hx%%I -strip ^
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
         -auto-level -enhance -interlace none -colorspace sRGB "temp-cache-files\%%~nG.mpc"
         CLS
@@ -39,7 +41,7 @@ REM CONVERT THE PREVIOUSLY CREATED MPC AND CACHE FILES INTO IT'S OPTIMIZED JPG F
 FOR %%G IN ("temp-cache-files\*.mpc") DO (
     ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
     ECHO=
-    convert.exe "%%G" -monitor "%%~nG.jpg"
+    %CONVERT% "%%G" -monitor "%%~nG.jpg"
     CLS
 )
 
@@ -49,5 +51,5 @@ REM CLEANUP TEMP FILES AND FOLDERS AND OPEN EXPLORER TO THE SCRIPT'S DIRECTORY
 START "" /MAX explorer.exe "%CD%"
 IF /I EXIST "imagemagick-optimize-jpg" RD /S /Q "imagemagick-optimize-jpg"
 IF /I EXIST "temp-cache-files" RD /S /Q "temp-cache-files"
-IF /I EXIST "convert.exe" DEL /Q "convert.exe"
+IF /I EXIST %CONVERT% DEL /Q %CONVERT%
 START "" /I CMD /D /C IF /I EXIST "optimize.bat" DEL /Q "optimize.bat"
