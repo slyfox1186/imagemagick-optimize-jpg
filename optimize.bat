@@ -4,14 +4,9 @@ COLOR 0A
 
 :----------------------------------------------------------------------------------
 
-REM CHANGE DIRECTORY TO THE SCRIPTS DIRECTORY AND OPEN CMD IN MAXIMIZED WINDOW
-PUSHD "%~dp0"
-IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
-
-:----------------------------------------------------------------------------------
-
 REM IF DEFINED USE THE FIRST PASSED ARGUMENT TO CHANGE THE WORKING DIRECTORY BACK TO THE PARENT FOLDER
-IF DEFINED PARENT_DIR (PUSHD "%PARENT_DIR%")
+IF DEFINED PARENT_DIR (PUSHD "%PARENT_DIR%") ELSE (PUSHD "%~dp0")
+IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
 
 :----------------------------------------------------------------------------------
 
