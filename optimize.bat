@@ -46,7 +46,8 @@ FOR %%G IN ("temp-cache-files\*.mpc") DO (
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES AND FOLDERS AND OPEN EXPLORER TO THE SCRIPT'S DIRECTORY
-START "" /MAX explorer.exe "%~dp0"
+START "" /MAX explorer.exe "%CD%"
+IF /I EXIST "imagemagick-optimize-jpg" RD /S /Q "imagemagick-optimize-jpg"
 IF /I EXIST "temp-cache-files" RD /S /Q "temp-cache-files"
 IF /I EXIST "convert.exe" DEL /Q "convert.exe"
 START "" /I CMD /D /C IF /I EXIST "optimize.bat" DEL /Q "optimize.bat"
