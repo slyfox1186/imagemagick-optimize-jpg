@@ -4,7 +4,7 @@ This script uses `ImageMagick's convert.exe` which creates two temporary cache f
 
 Make sure the file sizes are at least `>= 3MB per image` to get the best returns on space savings.
 
-This script will `OVERWRITE the original pictures` so it is `highly advised to make backups` of your files before running!
+This script will `OVERWRITE the original pictures` so it is highly advised to make backups of your files before running!
 
 To run this script `open cmd.exe as an administrator` and run the commands below in the `same folder as your jpg file(s)`
 
