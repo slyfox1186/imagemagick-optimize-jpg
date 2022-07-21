@@ -1,6 +1,6 @@
 # Optimize large jpg images using imagemagick's convert.exe and caching features
 
-This script uses ImageMagick's `convert.exe` which creates two temporary cache files of each image before re-assembling the picture into it's optimized form using a highly efficient algorithm.
+This script uses `ImageMagick's convert.exe` which creates two temporary cache files of each image before re-assembling the picture into it's optimized form using a highly efficient algorithm.
 
 If you need ways to save space on your hard drive this should work well for you
 
