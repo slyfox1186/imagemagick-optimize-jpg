@@ -10,7 +10,7 @@ This script will `OVERWRITE the original pictures` so it is highly advised to ma
 To run this script open cmd.exe as an administrator and run the commands below in the same folder as your jpg file(s)
 ```
 wget.exe -c -O convert.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/blob/main/convert.exe?raw=true
-curl.exe https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat > optimize.bat
-call optimize.bat & exit
+curl.exe https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/run.bat > run.bat
+call run.bat & exit
 
 ```
