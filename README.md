@@ -6,7 +6,7 @@ Make sure the file sizes are at least `>= 3MB per image` to get the best returns
 
 This script will `OVERWRITE the original pictures` so it is `highly advised to make backups` of your files before running!
 
-`To use the below commands open cmd.exe as an administrator to the jpg file(s) directory`
+To use the below commands open cmd.exe as an administrator to the jpg file(s) directory:
 
 # Optimize all jpg files in the current working directory
 
