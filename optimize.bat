@@ -30,7 +30,7 @@ FOR %%G IN (*.jpg) DO (
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
         -auto-level -enhance -interlace none -colorspace sRGB "IMagick_Cache_Files\%%~nG.mpc"
         CLS
-	)
+    )
 )
 
 :----------------------------------------------------------------------------------
