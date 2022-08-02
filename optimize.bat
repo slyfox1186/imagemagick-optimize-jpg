@@ -35,7 +35,7 @@ FOR %%G IN (*.jpg) DO (
 
 :----------------------------------------------------------------------------------
 
-REM CONVERT CACHE FILES INTO JPG
+REM CONVERT CACHE FILES INTO THE OPTIMIZED JPG VERSION
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
 FOR %%G IN ("temp-cache-files\*.mpc") DO (
