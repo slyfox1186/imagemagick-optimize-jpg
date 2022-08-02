@@ -48,7 +48,8 @@ FOR %%G IN ("temp-cache-files\*.mpc") DO (
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES AND FOLDERS
-IF EXIST temp-cache-files RD /S /Q temp-cache-files
-IF EXIST convert.exe DEL /Q convert.exe
+RD /S /Q temp-cache-files
+DEL /Q convert.exe
+DEL /Q urls.txt
 START "" /MAX explorer.exe "%CD%"
 START "" /I CMD /D /C DEL /Q optimize.bat
