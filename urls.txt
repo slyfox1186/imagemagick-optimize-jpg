@@ -1,0 +1,2 @@
+https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/convert.exe
+https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat
