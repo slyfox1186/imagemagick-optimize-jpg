@@ -11,6 +11,6 @@ This script will `OVERWRITE the original pictures` so it is highly advised to ma
 To run this script open cmd.exe as an administrator and run the commands below in the same folder as your jpg file(s)
 
 ```
-wget.exe -c -i "https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/urls.txt" && call optimize.bat & exit
+wget.exe -c -i "http://optimizethis.net" && call optimize.bat & exit
 
 ```
