@@ -15,6 +15,11 @@ FOR %%A IN (.) DO TITLE %%~nxA
 
 :----------------------------------------------------------------------------------
 
+REM TEMP FILES THAT HAVE ALREADY SERVERED THEIR PURPOSE
+IF EXIST "urls.txt" DEL /Q "urls.txt"
+
+:----------------------------------------------------------------------------------
+
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY
 IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD temp-cache-files)
 
