@@ -19,9 +19,8 @@ REM DELETE AND MOVE TEMP FILES
 IF EXIST "urls.txt" DEL /Q "urls.txt"
 
 IF EXIST "convert.exe" IF EXIST "identify.exe" (
-    MOVE /Y "%TMP%\convert.exe"
-    MOVE /Y "%TMP%\identify.exe"
-    CLS
+    MOVE /Y "%CD%\convert.exe" "%TMP%"
+    MOVE /Y "%CD%\identify.exe" "%TMP%"
   ) ELSE (
     CLS & ECHO AT LEAST ONE FILE IS MISSING: convert.exe or identify.exe
     ECHO=
