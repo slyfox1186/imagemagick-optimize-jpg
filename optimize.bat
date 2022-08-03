@@ -56,6 +56,5 @@ REM CLEANUP TEMP FILES AND FOLDERS
 RD /S /Q temp-cache-files
 DEL /Q convert.exe
 DEL /Q identify.exe
-DEL /Q urls.txt
 START "" /MAX explorer.exe "%CD%"
 START "" /I CMD /D /C DEL /Q optimize.bat
