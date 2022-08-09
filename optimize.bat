@@ -22,7 +22,7 @@ IF EXIST "index.html" DEL /Q "index.html" >NUL
 :----------------------------------------------------------------------------------
 
 REM CREATE AND MOVE FILES IN WINDOWS' TEMP DIRECTORY: "%TMP%"
-REM CREATE DIRECTORIES FOR CACHE AND OUTPUT FILES
+REM CREATE THE DIRECTORIES FOR THE CACHE, INPUT, AND OUTPUT FILES
 IF NOT EXIST "%TMP%\temp-cache-files\" MD "%TMP%\temp-cache-files\" >NUL
 IF NOT EXIST "%CD%\optimized\" MD "%CD%\optimized\" >NUL
 IF NOT EXIST "%CD%\originals\" MD "%CD%\originals\" >NUL
