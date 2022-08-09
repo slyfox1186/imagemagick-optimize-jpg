@@ -12,7 +12,7 @@ NOTE: https://optimizethis.net points to https://raw.githubusercontent.com/slyfo
 #### To execute this open an `elevated cmd.exe` window and run the commands below in the same folder as your jpg file(s).
 
 ```
-wget.exe -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
+wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
 
 ```
 #### For those interested in downloading the full version of ImageMagick
