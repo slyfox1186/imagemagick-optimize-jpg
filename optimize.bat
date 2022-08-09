@@ -32,7 +32,7 @@ IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files
 :----------------------------------------------------------------------------------
 
 REM FIND ALL JPG FILES AND CONVERT THEM TO TEMP CACHE FORMAT THEN COMBINE THE FILES AND OUTPUT THE OPTIMIZED IMAGES
-FOR %%G IN (*.jpg) DO (
+FOR %%G IN (*.jpg, *.jpeg) DO (
     FOR /F "TOKENS=1-2" %%H IN ('%TMP%\temp-cache-files\identify.exe +ping -format "%%w %%h" "%%G"') DO (
         ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
         ECHO= & CLS
