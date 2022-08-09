@@ -13,6 +13,7 @@ NOTE: https://optimizethis.net points to https://raw.githubusercontent.com/slyfo
 
 ```
 wget.exe -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
+
 ```
 #### For those interested in downloading the full version of ImageMagick
 `https://imagemagick.org/script/download.php`
