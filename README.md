@@ -1,4 +1,4 @@
-# Optimize large jpg images using ImageMagick's caching feature
+# Optimize large jpg/jpeg images using ImageMagick's caching feature
 
 This script uses ImageMagick's `convert.exe` file which creates two temporary cache files (`.mpc and .cache`) from each `.jp(e)g` file before using them to re-assemble the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you.
 
