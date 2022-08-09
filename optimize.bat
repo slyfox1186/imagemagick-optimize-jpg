@@ -38,15 +38,12 @@ FOR %%G IN (*.jpg) DO (
         ECHO=
         "%TMP%\temp-cache-files\convert.exe" "%CD%\%%~nxG" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
-        -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\temp-cache-files\%%~nG.mpc"
-        CLS
+        -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\temp-cache-files\%%~nG.mpc" & CLS
         IF EXIST "%TMP%\temp-cache-files\%%~nG.mpc" (
-            "%TMP%\temp-cache-files\convert.exe" "%TMP%\temp-cache-files\%%~nG.mpc" -monitor "%CD%\optimized\%%~nG.jpg"
-            CLS
-            IF EXIST "%TMP%\temp-cache-files\%%~nG.cache" DEL /Q "%TMP%\temp-cache-files\%%~nG.cache" >NUL
-            IF EXIST "%TMP%\temp-cache-files\%%~nG.mpc" DEL /Q "%TMP%\temp-cache-files\%%~nG.mpc" >NUL
-            MOVE /Y "%CD%\%%~nG.jpg" "%CD%\originals\"
-            CLS
+            "%TMP%\temp-cache-files\convert.exe" "%TMP%\temp-cache-files\%%~nG.mpc" -monitor "%CD%\optimized\%%~nG.jpg" & CLS
+            DEL /Q "%TMP%\temp-cache-files\%%~nG.cache" >NUL
+            DEL /Q "%TMP%\temp-cache-files\%%~nG.mpc" >NUL
+            MOVE /Y "%CD%\%%~nG.jpg" "%CD%\originals\" >NUL & CLS
         )
     )
 )
