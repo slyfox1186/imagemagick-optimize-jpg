@@ -35,7 +35,7 @@ REM FIND ALL JPG FILES AND CONVERT THEM TO TEMP CACHE FORMAT THEN COMBINE THE FI
 FOR %%G IN (*.jpg) DO (
     FOR /F "TOKENS=1-2" %%H IN ('%TMP%\temp-cache-files\identify.exe +ping -format "%%w %%h" "%%G"') DO (
         ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
-        ECHO=
+        ECHO= & CLS
         "%TMP%\temp-cache-files\convert.exe" "%CD%\%%~nxG" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
         -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\temp-cache-files\%%~nG.mpc" & CLS
@@ -43,7 +43,7 @@ FOR %%G IN (*.jpg) DO (
             "%TMP%\temp-cache-files\convert.exe" "%TMP%\temp-cache-files\%%~nG.mpc" -monitor "%CD%\optimized\%%~nG.jpg" & CLS
             DEL /Q "%TMP%\temp-cache-files\%%~nG.cache" >NUL
             DEL /Q "%TMP%\temp-cache-files\%%~nG.mpc" >NUL
-            MOVE /Y "%CD%\%%~nG.jpg" "%CD%\originals\" >NUL & CLS
+            MOVE /Y "%CD%\%%~nG.jpg" "%CD%\originals\" >NUL
         )
     )
 )
