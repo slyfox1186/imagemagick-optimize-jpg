@@ -9,7 +9,7 @@ From the current directory your run the command line in this will place the opti
 
 `NOTE:` https://optimizethis.net `points to` https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/urls.txt
 
-#### To execute this open an `elevated cmd.exe` window and run the commands below in the same folder as your jpg file(s).
+#### To execute this open an `elevated cmd.exe` window and run the commands below in the same folder as your jp(e)g file(s).
 
 ```
 wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
