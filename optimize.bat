@@ -15,7 +15,8 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 :----------------------------------------------------------------------------------
 
-REM DELETE FILES FROM PREVIOUS ATTEMPTS OR FAILED ATTEMPTS
+REM DELETE FILES FROM PREVIOUS OR FAILED ATTEMPTS
+IF EXIST "optimize.bat" DEL /Q "optimize.bat" >NUL
 IF EXIST "index.html" DEL /Q "index.html" >NUL
 
 :----------------------------------------------------------------------------------
