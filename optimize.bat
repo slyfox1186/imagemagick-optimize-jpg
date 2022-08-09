@@ -43,10 +43,11 @@ FOR %%G IN (*.jpg) DO (
 REM CONVERT CACHE FILES INTO THE OPTIMIZED JPG VERSION
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
-FOR %%G IN ("%CD%\temp-cache-files\*.mpc") DO (
-    ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
+FOR %%H IN ("temp-cache-files\*.mpc") DO (
+    ECHO Converting: %%~nH.cache ^>^> %%~nH.jpg
     ECHO=
-    convert.exe "%%G" -monitor "%%~nG.jpg"
+    "%CD%\convert.exe" "%%H" -monitor "%%~nH.jpg"
+    PAUSE
     CLS
 )
 
