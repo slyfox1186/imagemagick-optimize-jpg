@@ -15,23 +15,19 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 :----------------------------------------------------------------------------------
 
-REM CREATE TEMP DIRECTORIES FOR CACHE AND OUTPUT FILES
+REM DELETE FILES FROM PREVIOUS ATTEMPTS OR FAILED ATTEMPTS
+IF EXIST "index.html" (DEL /Q "index.html" & CLS)
+
+:----------------------------------------------------------------------------------
+
+REM CREATE AND MOVE FILES IN WINDOWS' TEMP DIRECTORY: "%TMP%"
+REM CREATE DIRECTORIES FOR CACHE AND OUTPUT FILES
 IF NOT EXIST "%TMP%\temp-cache-files\" MD "%TMP%\temp-cache-files\" >NUL
 IF NOT EXIST "%CD%\optimized\" MD "%CD%\optimized\" >NUL
 IF NOT EXIST "%CD%\originals\" MD "%CD%\originals\" >NUL
-
-:----------------------------------------------------------------------------------
-
-REM MOVE TEMP EXE FILES IF FOUND
+REM AND MOVE EXE FILES
 IF EXIST "%CD%\convert.exe" MOVE /Y "%CD%\convert.exe" "%TMP%\temp-cache-files\" >NUL
 IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files\" >NUL
-
-:----------------------------------------------------------------------------------
-
-REM DELETE FILES FROM PREVIOUS ATTEMPTS OR FAILED ATTEMPTS
-IF EXIST "index.html" DEL /Q "index.html" >NUL
-IF EXIST "urls.txt" DEL /Q "urls.txt" >NUL
-CLS
 
 :----------------------------------------------------------------------------------
 
@@ -62,6 +58,6 @@ START "" /MAX "%WINDIR%\explorer.exe" "%CD%\optimized\"
 
 :----------------------------------------------------------------------------------
 
-REM CLEANUP ALL OTHER TEMP FILES AND FOLDERS
+REM CLEANUP ALL TEMP FILES AND DIRECTORIES
 IF EXIST "%TMP%\temp-cache-files\" RD /S /Q "%TMP%\temp-cache-files\" >NUL
 START "" /I CMD /D /C DEL /Q "optimize.bat"
