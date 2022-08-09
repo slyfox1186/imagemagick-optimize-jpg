@@ -11,62 +11,57 @@ IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
 :----------------------------------------------------------------------------------
 
 REM SET THE TITLE OF THE WINDOW
-FOR %%A IN (.) DO TITLE %%~nxA
+FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
+
+:----------------------------------------------------------------------------------
+
+REM CREATE TEMP DIRECTORIES FOR CACHE AND OUTPUT FILES
+IF NOT EXIST "%TMP%\temp-cache-files\" MD "%TMP%\temp-cache-files\" >NUL
+IF NOT EXIST "%CD%\optimized\" MD "%CD%\optimized\" >NUL
+IF NOT EXIST "%CD%\originals\" MD "%CD%\originals\" >NUL
+
+:----------------------------------------------------------------------------------
+
+REM MOVE TEMP EXE FILES IF FOUND
+IF EXIST "%CD%\convert.exe" MOVE /Y "%CD%\convert.exe" "%TMP%\temp-cache-files\" >NUL
+IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files\" >NUL
 
 :----------------------------------------------------------------------------------
 
 REM DELETE FILES FROM PREVIOUS ATTEMPTS OR FAILED ATTEMPTS
-IF EXIST "convert.exe" (DEL /Q "convert.exe")
-IF EXIST "identify.exe" (DEL /Q "identify.exe")
-IF EXIST "index.html" (DEL /Q "index.html")
+IF EXIST "index.html" DEL /Q "index.html" >NUL
+IF EXIST "urls.txt" DEL /Q "urls.txt" >NUL
+CLS
 
 :----------------------------------------------------------------------------------
 
-REM TEMP FILES THAT HAVE ALREADY SERVERED THEIR PURPOSE
-IF EXIST "urls.txt" (DEL /Q "urls.txt")
-
-:----------------------------------------------------------------------------------
-
-REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY
-IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD "temp-cache-files" >NUL )
-
-:----------------------------------------------------------------------------------
-
-REM FIND ALL JPG FILES AND CONVERT THEM TO TEMPORARY CACHE FORMAT
-SETLOCAL ENABLEEXTENSIONS
+REM FIND ALL JPG FILES AND CONVERT THEM TO TEMP CACHE FORMAT
 FOR %%G IN (*.jpg) DO (
-    FOR /F "TOKENS=1-2" %%H IN ('identify.exe +ping -format "%%w %%h" "%%G"') DO (
+    FOR /F "TOKENS=1-2" %%H IN ('%TMP%\temp-cache-files\identify.exe +ping -format "%%w %%h" "%%G"') DO (
         ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
         ECHO=
-        convert.exe "%%G" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
+        "%TMP%\temp-cache-files\convert.exe" "%CD%\%%~nxG" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
-        -auto-level -enhance -interlace none -colorspace sRGB "temp-cache-files\%%~nG.mpc"
+        -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\temp-cache-files\%%~nG.mpc"
         CLS
+        IF EXIST "%TMP%\temp-cache-files\%%~nG.mpc" (
+            "%TMP%\temp-cache-files\convert.exe" "%TMP%\temp-cache-files\%%~nG.mpc" -monitor "%CD%\optimized\%%~nG.jpg"
+            CLS
+            IF EXIST "%TMP%\temp-cache-files\%%~nG.cache" DEL /Q "%TMP%\temp-cache-files\%%~nG.cache" >NUL
+            IF EXIST "%TMP%\temp-cache-files\%%~nG.mpc" DEL /Q "%TMP%\temp-cache-files\%%~nG.mpc" >NUL
+            MOVE /Y "%CD%\%%~nG.jpg" "%CD%\originals\"
+            CLS
+        )
     )
 )
 
 :----------------------------------------------------------------------------------
 
-REM CONVERT CACHE FILES INTO THE OPTIMIZED JPG VERSION
-:CONVERT
-SETLOCAL ENABLEEXTENSIONS
-FOR %%G IN ("temp-cache-files\*.mpc") DO (
-    ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
-    ECHO=
-    convert.exe "%%G" -monitor "%%~nG.jpg"
-    CLS
-)
-
-:----------------------------------------------------------------------------------
-
 REM OPEN PARENT FOLDER IN EXPLORER
-START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
+START "" /MAX "%WINDIR%\explorer.exe" "%CD%\optimized\"
 
 :----------------------------------------------------------------------------------
 
-REM CLEANUP TEMP FILES AND FOLDERS
-REM IF EXIST "temp-cache-files\" (RD /S /Q "temp-cache-files\")
-REM IF EXIST "convert.exe" (DEL /Q "convert.exe")
-REM IF EXIST "identify.exe" (DEL /Q "identify.exe")
-IF EXIST "index.html" (DEL /Q "index.html")
-START "" /I CMD /D /C (DEL /Q "optimize.bat")
+REM CLEANUP ALL OTHER TEMP FILES AND FOLDERS
+IF EXIST "%TMP%\temp-cache-files\" RD /S /Q "%TMP%\temp-cache-files\" >NUL
+START "" /I CMD /D /C DEL /Q "optimize.bat"
