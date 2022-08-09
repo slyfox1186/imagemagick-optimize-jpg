@@ -21,7 +21,7 @@ IF EXIST "urls.txt" DEL /Q "urls.txt"
 :----------------------------------------------------------------------------------
 
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY
-IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD temp-cache-files)
+IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD temp-cache-files >NUL)
 
 :----------------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ FOR %%G IN (*.jpg) DO (
 REM CONVERT CACHE FILES INTO THE OPTIMIZED JPG VERSION
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
-FOR %%G IN ("temp-cache-files\*.mpc") DO (
+FOR %%G IN ("%CD%\temp-cache-files\*.mpc") DO (
     ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
     ECHO=
     convert.exe "%%G" -monitor "%%~nG.jpg"
@@ -53,8 +53,9 @@ FOR %%G IN ("temp-cache-files\*.mpc") DO (
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES AND FOLDERS
-RD /S /Q temp-cache-files
-DEL /Q convert.exe
-DEL /Q identify.exe
+REM RD /S /Q temp-cache-files
+REM IF EXIST convert.exe DEL /Q convert.exe
+REM IF EXIST identify.exe DEL /Q identify.exe
+IF EXIST index.html DEL /Q index.html
 START "" /MAX explorer.exe "%CD%"
 START "" /I CMD /D /C DEL /Q optimize.bat
