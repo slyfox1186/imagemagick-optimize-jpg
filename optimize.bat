@@ -25,7 +25,7 @@ REM CREATE DIRECTORIES FOR CACHE AND OUTPUT FILES
 IF NOT EXIST "%TMP%\temp-cache-files\" MD "%TMP%\temp-cache-files\" >NUL
 IF NOT EXIST "%CD%\optimized\" MD "%CD%\optimized\" >NUL
 IF NOT EXIST "%CD%\originals\" MD "%CD%\originals\" >NUL
-REM AND MOVE EXE FILES
+REM MOVE EXE FILES AS WELL
 IF EXIST "%CD%\convert.exe" MOVE /Y "%CD%\convert.exe" "%TMP%\temp-cache-files\" >NUL
 IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files\" >NUL
 
