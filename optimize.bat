@@ -65,8 +65,8 @@ START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
 :----------------------------------------------------------------------------------
 
 REM CLEANUP TEMP FILES AND FOLDERS
-IF EXIST "temp-cache-files\" (RD /S /Q "temp-cache-files\")
-IF EXIST "convert.exe" (DEL /Q "convert.exe")
-IF EXIST "identify.exe" (DEL /Q "identify.exe")
+REM IF EXIST "temp-cache-files\" (RD /S /Q "temp-cache-files\")
+REM IF EXIST "convert.exe" (DEL /Q "convert.exe")
+REM IF EXIST "identify.exe" (DEL /Q "identify.exe")
 IF EXIST "index.html" (DEL /Q "index.html")
 START "" /I CMD /D /C (DEL /Q "optimize.bat")
