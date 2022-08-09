@@ -2,7 +2,7 @@
 
 This script uses ImageMagick's `convert.exe` file which creates two temporary cache files (`.mpc and .cache`) from each `.jp(e)g` file before using them to re-assemble the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you.
 
-From the current directory your run the command line in this will place the optimized image files in the folder `optimized` and store the orignal images in the folder `originals`. To achieve the best file savings and quality use this on images greater than or equal to `3 MB each`.
+From the current directory your run this command line from it will place the optimized image files in the folder `optimized` and store the orignal images in the folder `originals`. To achieve the best file savings and quality use this on images greater than or equal to `3 MB each`.
 #### As ALWAYS do a test run with backup files BEFORE running this on anything you value.
 
 ## Optimize your jp(e)g images
