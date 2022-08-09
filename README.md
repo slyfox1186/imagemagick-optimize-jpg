@@ -7,7 +7,7 @@ From the directory your run the command line from it will place the optimized im
 
 ## Optimize your jp(e)g images
 
-NOTE: https://optimizethis.net points to https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/urls.txt
+`NOTE:` https://optimizethis.net `points to` https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/urls.txt
 
 #### To execute this open an `elevated cmd.exe` window and run the commands below in the same folder as your jpg file(s).
 
