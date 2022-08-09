@@ -11,6 +11,6 @@ This script will `OVERWRITE the original pictures` so it is highly advised to ma
 To run this script open cmd.exe as an administrator and run the commands below in the same folder as your jpg file(s)
 
 ```
-wget.exe -c -i https://optimizethis.net >NUL && call optimize.bat & exit
+wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
 
 ```
