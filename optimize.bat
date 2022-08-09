@@ -15,13 +15,20 @@ FOR %%A IN (.) DO TITLE %%~nxA
 
 :----------------------------------------------------------------------------------
 
+REM DELETE FILES FROM PREVIOUS ATTEMPTS OR FAILED ATTEMPTS
+IF EXIST "convert.exe" (DEL /Q "convert.exe")
+IF EXIST "identify.exe" (DEL /Q "identify.exe")
+IF EXIST "index.html" (DEL /Q "index.html")
+
+:----------------------------------------------------------------------------------
+
 REM TEMP FILES THAT HAVE ALREADY SERVERED THEIR PURPOSE
-IF EXIST "urls.txt" DEL /Q "urls.txt"
+IF EXIST "urls.txt" (DEL /Q "urls.txt")
 
 :----------------------------------------------------------------------------------
 
 REM SKIP TO CONVERT IF CACHE FILES ALREADY EXIST OR CREATE THE TEMP DIRECTORY
-IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD temp-cache-files >NUL)
+IF EXIST "temp-cache-files\*.mpc" (GOTO CONVERT) ELSE (MD "temp-cache-files" >NUL )
 
 :----------------------------------------------------------------------------------
 
@@ -43,20 +50,23 @@ FOR %%G IN (*.jpg) DO (
 REM CONVERT CACHE FILES INTO THE OPTIMIZED JPG VERSION
 :CONVERT
 SETLOCAL ENABLEEXTENSIONS
-FOR %%H IN ("temp-cache-files\*.mpc") DO (
-    ECHO Converting: %%~nH.cache ^>^> %%~nH.jpg
+FOR %%G IN ("temp-cache-files\*.mpc") DO (
+    ECHO Converting: %%~nG.cache ^>^> %%~nG.jpg
     ECHO=
-    "%CD%\convert.exe" "%%H" -monitor "%%~nH.jpg"
-    PAUSE
+    convert.exe "%%G" -monitor "%%~nG.jpg"
     CLS
 )
 
 :----------------------------------------------------------------------------------
 
+REM OPEN PARENT FOLDER IN EXPLORER
+START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
+
+:----------------------------------------------------------------------------------
+
 REM CLEANUP TEMP FILES AND FOLDERS
-REM RD /S /Q temp-cache-files
-REM IF EXIST convert.exe DEL /Q convert.exe
-REM IF EXIST identify.exe DEL /Q identify.exe
-IF EXIST index.html DEL /Q index.html
-START "" /MAX explorer.exe "%CD%"
-START "" /I CMD /D /C DEL /Q optimize.bat
+IF EXIST "temp-cache-files\" (RD /S /Q "temp-cache-files\")
+IF EXIST "convert.exe" (DEL /Q "convert.exe")
+IF EXIST "identify.exe" (DEL /Q "identify.exe")
+IF EXIST "index.html" (DEL /Q "index.html")
+START "" /I CMD /D /C (DEL /Q "optimize.bat")
