@@ -18,5 +18,10 @@ From the directory your run this command line from, it will place the optimized 
 wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
 
 ```
+### The below command will delete the original files. Beware!
+```
+wget.exe -c -i https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize-and-remove.bat >NUL 2>&1 && call optimize.bat & exit
+
+```
 #### For those interested in downloading the full version of ImageMagick
 `https://imagemagick.org/script/download.php`
