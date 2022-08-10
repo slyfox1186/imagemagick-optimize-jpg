@@ -20,8 +20,9 @@ wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
 ```
 ### The below command will delete the original files. Beware!
 ```
-wget.exe -c -O optimize-overwrite.bat https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat && call optimize-overwrite.bat & exit
+wget.exe -c https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat && call optimize-overwrite.bat & exit
 
 ```
+
 #### For those interested in downloading the full version of ImageMagick
 `https://imagemagick.org/script/download.php`
