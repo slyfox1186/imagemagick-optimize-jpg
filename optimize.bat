@@ -15,8 +15,10 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 :----------------------------------------------------------------------------------
 
-REM DELETE FILES FROM PREVIOUS OR FAILED ATTEMPTS
+REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
 IF EXIST "index.html" DEL /Q "index.html" >NUL
+IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q "%CD%\convert.exe" >NUL
+IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q "%CD%\identify.exe" >NUL
 
 :----------------------------------------------------------------------------------
 
