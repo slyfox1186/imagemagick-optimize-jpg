@@ -35,8 +35,8 @@ IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files
 REM FIND ALL JPG FILES AND CONVERT THEM TO TEMP CACHE FORMAT THEN COMBINE THE FILES AND OUTPUT THE OPTIMIZED IMAGES
 FOR %%G IN (*.jpg, *.jpeg) DO (
     FOR /F "TOKENS=1-2" %%H IN ('%TMP%\temp-cache-files\identify.exe +ping -format "%%w %%h" "%%G"') DO (
-        ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
-        ECHO= & CLS
+        CLS & ECHO Creating: %%~nG.mpc ^+ %%~nG.cache
+        ECHO=
         "%TMP%\temp-cache-files\convert.exe" "%CD%\%%~nxG" -monitor -filter Triangle -define filter:support=2 -thumbnail "%%Hx%%I" -strip ^
         -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off ^
         -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\temp-cache-files\%%~nG.mpc" & CLS
