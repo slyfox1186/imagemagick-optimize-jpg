@@ -29,8 +29,8 @@ IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files
 
 REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
 IF EXIST "index.html" DEL /Q "index.html" >NUL
-IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q "%CD%\convert.exe"
-IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q "%CD%\identify.exe"
+IF EXIST "%TMP%\temp-cache-files\convert.exe" IF EXIST "%CD%\convert.exe" DEL /Q "%CD%\convert.exe"
+IF EXIST "%TMP%\temp-cache-files\identify.exe" IF EXIST "%CD%\identify.exe" DEL /Q "%CD%\identify.exe"
 
 :----------------------------------------------------------------------------------
 
