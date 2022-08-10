@@ -12,6 +12,7 @@ IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
 
 REM SET THE TITLE OF THE WINDOW
 FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
+TIMEOUT /NOBREAK 1 >NUL
 
 :----------------------------------------------------------------------------------
 
