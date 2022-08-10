@@ -23,5 +23,9 @@ wget.exe -c -i https://optimizethis.net >NUL 2>&1 && call optimize.bat & exit
 wget.exe -c -i https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/urls-overwrite.txt >NUL 2>&1 && call optimize-overwrite.bat & exit
 
 ```
+```
+curl.exe -C -O --connect-timeout 10 -D https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat > optimize-overwrite.bat && call optimize-overwrite.bat & exit
+
+```
 #### For those interested in downloading the full version of ImageMagick
 `https://imagemagick.org/script/download.php`
