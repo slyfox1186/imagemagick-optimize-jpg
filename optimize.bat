@@ -16,13 +16,6 @@ TIMEOUT /NOBREAK 1 >NUL
 
 :----------------------------------------------------------------------------------
 
-REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
-IF EXIST "index.html" DEL /Q "index.html" >NUL
-IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q /F "%CD%\convert.exe" >NUL
-IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q /F "%CD%\identify.exe" >NUL
-
-:----------------------------------------------------------------------------------
-
 REM CREATE AND MOVE FILES IN WINDOWS' TEMP DIRECTORY: "%TMP%"
 REM CREATE THE DIRECTORIES FOR THE CACHE, INPUT, AND OUTPUT FILES
 IF NOT EXIST "%TMP%\temp-cache-files\" MD "%TMP%\temp-cache-files\" >NUL
@@ -31,6 +24,13 @@ IF NOT EXIST "%CD%\originals\" MD "%CD%\originals\" >NUL
 REM MOVE EXE FILES AS WELL
 IF EXIST "%CD%\convert.exe" MOVE /Y "%CD%\convert.exe" "%TMP%\temp-cache-files\" >NUL
 IF EXIST "%CD%\identify.exe" MOVE /Y "%CD%\identify.exe" "%TMP%\temp-cache-files\" >NUL
+
+:----------------------------------------------------------------------------------
+
+REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
+IF EXIST "index.html" DEL /Q "index.html" >NUL
+IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q /F "%CD%\convert.exe" >NUL
+IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q /F "%CD%\identify.exe" >NUL
 
 :----------------------------------------------------------------------------------
 
