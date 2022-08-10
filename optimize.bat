@@ -18,8 +18,8 @@ TIMEOUT /NOBREAK 1 >NUL
 
 REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
 IF EXIST "index.html" DEL /Q "index.html" >NUL
-IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q "%CD%\convert.exe" >NUL
-IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q "%CD%\identify.exe" >NUL
+IF EXIST "%CD%\convert.exe" IF EXIST "%TMP%\temp-cache-files\convert.exe" DEL /Q /F "%CD%\convert.exe" >NUL
+IF EXIST "%CD%\identify.exe" IF EXIST "%TMP%\temp-cache-files\identify.exe" DEL /Q /F "%CD%\identify.exe" >NUL
 
 :----------------------------------------------------------------------------------
 
@@ -60,6 +60,6 @@ START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
 
 REM CLEANUP ALL TEMP FILES AND DIRECTORIES
 IF EXIST "%TMP%\temp-cache-files\" RD /S /Q "%TMP%\temp-cache-files\" >NUL
-IF EXIST "%CD%\convert.exe" DEL /Q "%CD%\convert.exe" >NUL
-IF EXIST "%CD%\identify.exe" DEL /Q "%CD%\identify.exe" >NUL
+IF EXIST "%CD%\convert.exe" DEL /Q /F "%CD%\convert.exe" >NUL
+IF EXIST "%CD%\identify.exe" DEL /Q /F "%CD%\identify.exe" >NUL
 START "" /I CMD /D /C DEL /Q "optimize.bat" >NUL
