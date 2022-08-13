@@ -2,7 +2,7 @@
 
 The script `optimize.bat` uses ImageMagick's `convert.exe` which creates two temporary cache files (`.mpc and .cache`) from each `.jpg` image before using them to re-assemble the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you.
 
-From the directory you run this command line from, it will place the optimized image files in the folder `optimized` and store the orignal images in the folder `originals`. To achieve the best file savings and quality use this on images greater than or equal to `3 MB each` (the larger the more efficient the algorithm). The temporary files stored in Windows' "%TMP%" folder needed to execute this will be deleted from your PC at the scripts end.
+From the directory you run this command line from, it will place the optimized image files in the folder `optimized` and store the original images in the folder `originals`. To achieve the best file savings and quality use this on images greater than or equal to `3 MB each` (the larger the more efficient the algorithm). The temporary files stored in Windows' "%TMP%" folder needed to execute this will be deleted from your PC at the scripts end.
 
 * This script requires `ImageMagick` for Windows and `wget.exe` (I use the latest v1.21.3).
   - * Download: [ImageMagick](https://imagemagick.org/script/download.php)
