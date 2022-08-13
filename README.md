@@ -29,3 +29,5 @@ exit
 wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat >NUL 2>&1 && ^
 call optimize-overwrite.bat && ^
 exit
+
+```
