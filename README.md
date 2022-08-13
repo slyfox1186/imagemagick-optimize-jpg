@@ -14,12 +14,12 @@ From the directory your run this command line from, it will place the optimized 
 
 * Important! Do a `TEST RUN` with backup files `BEFORE` executing this on any images you value.
 
-## Optimize your jpg images
+## Command Lines
 
 #### To execute this open an `elevated cmd.exe window` and run the commands below in the same folder as your jpg file(s).
 
 ```
-wget.exe -c -i https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat >NUL 2>&1 && ^
+wget.exe -c https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat >NUL 2>&1 && ^
 call optimize.bat && ^
 exit
 
