@@ -1,17 +1,19 @@
 # Optimize large JPG images using ImageMagick's caching ability
 ### CURRENTLY IN TESTING MODE ONLY
 
-* This script requires `ImageMagick for Windows`.
-* You must download the `DLL` version that contains the file `convert.exe`
-* Add ImageMagick's install directory to the Windows `PATH`
-* [Download](https://imagemagick.org/script/download.php)
-  - Example: `ImageMagick-some.numbers-Q16-HDRI-x64-dll.exe`
-
-#### Important! Do a TEST RUN with backup files BEFORE running this on any images you value.
-
 The script `optimize.bat` uses ImageMagick's `convert.exe` which creates two temporary cache files (`.mpc and .cache`) from each `.jpg` image before using them to re-assemble the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you.
 
 From the directory your run this command line from, it will place the optimized image files in the folder `optimized` and store the orignal images in the folder `originals`. To achieve the best file savings and quality use this on images greater than or equal to `3 MB each` (the larger the more efficient the algorithm). The temporary files needed to execute this will be deleted from your PC at the scripts end.
+
+* This script requires `ImageMagick` for Windows and `wget.exe` (I use the latest v1.21.3).
+  - * Download: [ImageMagick](https://imagemagick.org/script/download.php)
+  - * Download: [wget.exe](https://eternallybored.org/misc/wget/1.21.3/64/wget.exe)
+
+* You must download the `DLL` version that contains the file `convert.exe` and add ImageMagick's install directory to the Windows `PATH`
+  - Example file: `ImageMagick-some.numbers-Q16-HDRI-x64-dll.exe`
+  - Example path: `C:\Program Files\ImageMagick`
+
+* Important! Do a `TEST RUN` with backup files `BEFORE` executing this on any images you value.
 
 ## Optimize your jpg images
 
@@ -28,5 +30,3 @@ exit
 wget.exe -c https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat >NUL 2>&1 && ^
 call optimize-overwrite.bat && ^
 exit
-
-```
