@@ -13,7 +13,7 @@ From the directory your run this command line from, it will place the optimized 
 #### To execute this open an `elevated cmd.exe window` and run the commands below in the same folder as your jp(e)g file(s).
 
 ```
-wget.exe -c -i https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize.bat >NUL 2>&1 && call optimize.bat & exit
+wget.exe -c -i  >NUL 2>&1 && call optimize.bat & exit
 
 ```
 ### The below command will delete the original files. Beware!
@@ -23,4 +23,6 @@ wget.exe -c https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/opti
 ```
 
 #### For those interested in downloading the full version of ImageMagick
-`https://imagemagick.org/script/download.php`
+```
+https://imagemagick.org/script/download.php
+```
