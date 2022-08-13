@@ -19,15 +19,11 @@ From the directory you run this command line from, it will place the optimized i
 #### To execute this open an `elevated cmd.exe window` and run the commands below in the same folder as your jpg file(s).
 
 ```
-wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat >NUL 2>&1 && ^
-call optimize.bat && ^
-exit
+wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat >NUL 2>&1 && call optimize.bat & exit
 
 ```
 #### The below command will delete the original files. Beware!
 ```
-wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat >NUL 2>&1 && ^
-call optimize-overwrite.bat && ^
-exit
+wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat >NUL 2>&1 && call optimize-overwrite.bat & exit
 
 ```
