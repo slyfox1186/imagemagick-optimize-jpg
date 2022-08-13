@@ -1,5 +1,4 @@
 # Optimize large JPG images using ImageMagick's caching ability
-### CURRENTLY IN TESTING MODE ONLY
 
 The script `optimize.bat` uses ImageMagick's `convert.exe` which creates two temporary cache files (`.mpc and .cache`) from each `.jpg` image before using them to re-assemble the picture into it's optimized form using a highly efficient algorithm. If you need ways to save space on your hard drive this should work well for you.
 
