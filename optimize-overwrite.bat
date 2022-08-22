@@ -44,8 +44,8 @@ FOR %%G IN (*.jpg) DO (
 
 :----------------------------------------------------------------------------------
 
-REM UNCOMMENT TO OPEN PARENT FOLDER IN EXPLORER ONCE SCRIPT HAS FINISHED
-REM START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
+REM OPEN PARENT FOLDER IN EXPLORER ONCE SCRIPT HAS FINISHED
+START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
 
 :----------------------------------------------------------------------------------
 
