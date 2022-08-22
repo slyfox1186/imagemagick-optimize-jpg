@@ -1,1 +1,1 @@
-https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat
+https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/optimize-overwrite.bat
