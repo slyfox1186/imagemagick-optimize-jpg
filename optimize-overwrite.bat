@@ -44,10 +44,10 @@ FOR %%G IN (*.jpg) DO (
 
 :----------------------------------------------------------------------------------
 
-REM OPEN PARENT FOLDER IN EXPLORER
-START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
+REM UNCOMMENT TO OPEN PARENT FOLDER IN EXPLORER ONCE SCRIPT HAS FINISHED
+REM START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
 
 :----------------------------------------------------------------------------------
 
 REM CLEANUP ALL TEMP FILES AND DIRECTORIES
-START "" /I CMD /D /C DEL /Q "optimize-overwrite.bat" >NUL
+REM START "" /I CMD /D /C DEL /Q "optimize-overwrite.bat" >NUL
