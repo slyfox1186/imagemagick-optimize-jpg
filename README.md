@@ -24,6 +24,6 @@ wget.exe https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimiz
 ```
 #### The below command will delete the original files. Beware!
 ```
-wget.exe "https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat" >NUL 2>&1 & call optimize-overwrite.bat & exit
+wget.exe -qO ow.bat "https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat" >NUL 2>&1 & call ow.bat & exit
 
 ```
