@@ -22,7 +22,7 @@ From the directory you run this command line from, it will place the optimized i
 wget.exe -qN https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize.bat >NUL 2>&1 & call optimize.bat & exit
 
 ```
-#### The below command will delete the original files. Beware!
+#### The below command will overwrite the original files. Beware!
 ```
 wget.exe -qN https://github.com/slyfox1186/imagemagick-optimize-jpg/raw/main/optimize-overwrite.bat >NUL 2>&1 & call optimize-overwrite.bat & exit
 
