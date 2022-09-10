@@ -50,4 +50,4 @@ START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
 :----------------------------------------------------------------------------------
 
 REM CLEANUP ALL TEMP FILES AND DIRECTORIES
-START "" /I CMD /D /C DEL /Q "optimize-overwrite.bat" >NUL
+START "" /I CMD /D /C DEL /Q "optimize-ow.bat" >NUL
