@@ -17,6 +17,7 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
 IF EXIST "index.html" DEL /Q "index.html" >NUL
+IF EXIST "urls.txt" DEL /Q "urls.txt" >NUL
 
 :----------------------------------------------------------------------------------
 
