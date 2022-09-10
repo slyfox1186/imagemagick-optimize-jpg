@@ -1,2 +1,3 @@
 https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/opt.bat
 https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/ow.bat
+https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/run.bat
