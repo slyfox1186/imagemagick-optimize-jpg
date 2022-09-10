@@ -1,3 +1,6 @@
 # gitignore
 
 README.md
+urls.txt
+*.html
+*.php
