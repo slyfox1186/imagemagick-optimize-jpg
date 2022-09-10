@@ -50,8 +50,3 @@ FOR %%G IN (*.jpg) DO (
 
 REM OPEN PARENT FOLDER IN EXPLORER
 START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
-
-:----------------------------------------------------------------------------------
-
-REM CLEANUP ALL TEMP FILES AND DIRECTORIES
-START "" /I CMD /D /C DEL /Q "opt.bat" >NUL
