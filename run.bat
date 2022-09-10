@@ -10,6 +10,7 @@ IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat"
 
 :----------------------------------------------------------------------------------------------
 
+CLS
 ECHO CHOOSE A PATH FORWARD: & ECHO=
 ECHO [1]  OPTIMIZE ^(ORIGINAL FILE SAFE^)
 ECHO [2]  OPTIMIZE ^+ OVERWRITE ^(BEWARE OF LOSING YOUR ORIGINALS^!^)
