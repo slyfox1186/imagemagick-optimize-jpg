@@ -4,13 +4,18 @@ COLOR 0A
 
 :----------------------------------------------------------------------------------------------
 
+REM REMOVE MISC FILES OF NO USE
+IF EXIST "index.html" DEL /Q "index.html"
+IF EXIST "urls.txt" DEL /Q "urls.txt"
+
+:----------------------------------------------------------------------------------------------
+
 REM MOVE FILES TO TMP DIRECTORY
 IF EXIST "opt.bat" MOVE /Y "opt.bat" "%TMP%\opt.bat"
 IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat"
 
 :----------------------------------------------------------------------------------------------
 
-CLS
 ECHO CHOOSE A PATH FORWARD: & ECHO=
 ECHO [1]  OPTIMIZE ^(ORIGINAL FILE SAFE^)
 ECHO [2]  OPTIMIZE ^+ OVERWRITE ^(BEWARE OF LOSING YOUR ORIGINALS^!^)
@@ -27,8 +32,9 @@ IF ERRORLEVEL 1 GOTO OPT
 :OW
 IF EXIST "%TMP%\ow.bat" (
     CALL "%TMP%\ow.bat"
-    DEL /Q "%TMP%\ow.bat"
     GOTO :EOF
+  ) ELSE (
+    ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
 )
 
 
@@ -37,6 +43,7 @@ IF EXIST "%TMP%\ow.bat" (
 :OPT
 IF EXIST "%TMP%\opt.bat" (
     CALL "%TMP%\opt.bat"
-    DEL /Q "%TMP%\opt.bat"
     GOTO :EOF
+  ) ELSE (
+    ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
 )
