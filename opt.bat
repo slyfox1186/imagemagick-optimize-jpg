@@ -18,11 +18,6 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 :----------------------------------------------------------------------------------
 
-REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
-IF EXIST "index.html" DEL /Q "index.html" >NUL
-
-:----------------------------------------------------------------------------------
-
 REM CREATE AND MOVE FILES IN WINDOWS' TEMP DIRECTORY: "%TMP%"
 REM CREATE THE DIRECTORIES FOR THE CACHE, INPUT, AND OUTPUT FILES
 IF NOT EXIST "%TMP%\jpg-cache\" MD "%TMP%\jpg-cache\" >NUL
