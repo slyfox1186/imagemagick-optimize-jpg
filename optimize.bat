@@ -51,5 +51,4 @@ START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
 :----------------------------------------------------------------------------------
 
 REM CLEANUP ALL TEMP FILES AND DIRECTORIES
-IF EXIST "index.html" DEL /Q "index.html" >NUL
 START "" /I CMD /D /C DEL /Q "optimize.bat" >NUL
