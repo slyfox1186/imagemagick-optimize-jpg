@@ -48,5 +48,6 @@ FOR %%G IN (*.jpg) DO (
 
 :----------------------------------------------------------------------------------
 
-REM OPEN PARENT FOLDER IN EXPLORER
+REM OPEN PARENT FOLDER IN EXPLORER ONCE SCRIPT HAS FINISHED
 START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
+EXIT /B
