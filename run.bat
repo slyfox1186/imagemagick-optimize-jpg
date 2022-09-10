@@ -1,5 +1,6 @@
 @ECHO OFF
 SETLOCAL ENABLEEXTENSIONS
+PROMPT $G
 COLOR 0A
 
 :----------------------------------------------------------------------------------------------
@@ -16,9 +17,10 @@ IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat"
 
 :----------------------------------------------------------------------------------------------
 
+REM PROMPT USER WITH CHOICES
 ECHO CHOOSE A PATH FORWARD: & ECHO=
 ECHO [1]  OPTIMIZE ^(ORIGINAL FILE SAFE^)
-ECHO [2]  OPTIMIZE ^+ OVERWRITE ^(BEWARE OF LOSING YOUR ORIGINALS^!^)
+ECHO [2]  OPTIMIZE ^+ OVERWRITE ^(BEWARE OF LOSING YOUR ORIGINAL FILES^!^)
 ECHO [3]  GOTO EXIT & ECHO=
 
 CHOICE /C 123 /N & CLS
@@ -31,10 +33,13 @@ IF ERRORLEVEL 1 GOTO OPT
 
 :OW
 IF EXIST "%TMP%\ow.bat" (
-    CALL "%TMP%\ow.bat"
+    CALL "%TMP%\ow.bat" "%~dp0"
     GOTO :EOF
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
+    ECHO=
+    PAUSE
+    GOTO :EOF
 )
 
 
@@ -42,8 +47,11 @@ IF EXIST "%TMP%\ow.bat" (
 
 :OPT
 IF EXIST "%TMP%\opt.bat" (
-    CALL "%TMP%\opt.bat"
+    CALL "%TMP%\opt.bat" "%~dp0"
     GOTO :EOF
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
+    ECHO=
+    PAUSE
+    GOTO :EOF
 )
