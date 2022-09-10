@@ -6,8 +6,11 @@ COLOR 0A
 
 REM CHANGE DIRECTORY TO THE SCRIPTS DIRECTORY AND OPEN CMD IN MAXIMIZED WINDOW
 PUSHD "%~dp0"
-IF NOT "%1"=="MAX" START /MAX CMD /D /C %0 MAX & GOTO :EOF
-
+SET NEW_DIR=%1
+CLS & ECHO=
+ECHO %NEW_DIR%
+PAUSE
+EXIT
 :----------------------------------------------------------------------------------
 
 REM SET THE TITLE OF THE WINDOW
@@ -17,7 +20,6 @@ FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 
 REM DELETE FILES FROM ANY PRIOR FAILED ATTEMPTS
 IF EXIST "index.html" DEL /Q "index.html" >NUL
-IF EXIST "urls.txt" DEL /Q "urls.txt" >NUL
 
 :----------------------------------------------------------------------------------
 
