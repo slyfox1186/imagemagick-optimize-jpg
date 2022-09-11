@@ -18,6 +18,7 @@ IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat" >NUL
 :----------------------------------------------------------------------------------------------
 
 REM PROMPT USER WITH CHOICES
+CLS
 ECHO CHOOSE A PATH FORWARD: & ECHO=
 ECHO [1]  OPTIMIZE ^(SAFE FOR ORIGINAL FILES^)
 ECHO [2]  OPTIMIZE^+OVERWRITE ^(DANGER: OVERWRITES ORIGINAL FILES^!^)
