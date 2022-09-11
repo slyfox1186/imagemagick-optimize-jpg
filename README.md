@@ -16,14 +16,10 @@ From the directory you run this command line from, it will place the optimized i
 
 ## Command Lines
 
-#### To execute this open an `elevated cmd.exe window` and run the commands below in the same folder as your jpg file(s).
+#### To execute these scripts open an *elevated* `cmd.exe` window and run the command below in the same folder as your jpg file(s).
+#### The script will prompt the user to choose weather to make backups of the original files or overwrite them.
 
 ```
-wget.exe -qO optimize.bat http://magick.optimizethis.net >NUL 2>&1 & call optimize.bat & exit
-
-```
-#### The below command will overwrite the original files. Beware!
-```
-wget.exe -qO optimize-overwrite.bat http://magick1.optimizethis.net >NUL 2>&1 & call optimize-overwrite.bat & exit
+wget.exe -qN - -i http://magick.optimizethis.net & call run.bat & exit
 
 ```
