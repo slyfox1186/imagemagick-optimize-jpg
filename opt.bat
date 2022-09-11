@@ -22,6 +22,7 @@ FOR /F "USEBACKQ TOKENS=*" %%A IN (`WHERE identify.exe ^| FINDSTR /I /R ".*Image
 REM CREATE FILES IN WINDOWS' TEMP DIRECTORY: "%TMP%"
 IF NOT EXIST "%TMP%\jpg-cache\" MD "%TMP%\jpg-cache\" 2>NUL
 IF NOT EXIST "optimized\" MD "optimized\" 2>NUL
+IF NOT EXIST "originals\" MD "originals\" 2>NUL
 
 :----------------------------------------------------------------------------------
 
@@ -35,7 +36,8 @@ FOR %%G IN (*.jpg) DO (
         -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\jpg-cache\%%~nG.mpc" & CLS
         IF EXIST "%TMP%\jpg-cache\%%~nG.mpc" (
             %CONVERT% "%TMP%\jpg-cache\%%~nG.mpc" -monitor "optimized\%%~nG.jpg" & CLS
-            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc"
+            MOVE /Y "%%~nG.jpg" "originals\%%~nG.jpg" >NUL
+            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc" >NUL
         )
     )
 )
