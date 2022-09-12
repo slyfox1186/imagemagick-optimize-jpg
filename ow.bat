@@ -1,18 +1,17 @@
 @ECHO OFF
-COLOR 0A
+TITLE File: %2  Path: %1
 
 :----------------------------------------------------------------------------------
 
-REM CHANGE DIRECTORY TO THE CALLER SCRIPT'S DIRECTORY "run.bat"
+REM CHANGE DIRECTORY TO THE CALLER SCRIPT'S DIRECTORY
 PUSHD "%1"
 
 :----------------------------------------------------------------------------------
 
-REM SET THE TITLE OF THE WINDOW
-FOR %%A IN (.) DO TITLE Optimize jpg images: %%~fA
 REM FIND IMAGEMAGICK'S CONVERT.EXE FILE AND SET A VARIABLE TO POINT TO IT'S FULL PATH
 FOR /F "USEBACKQ TOKENS=*" %%A IN (`WHERE convert.exe ^| FINDSTR /I /R ".*ImageMagick.*convert.exe$"`) DO SET "CONVERT="%%A""
 FOR /F "USEBACKQ TOKENS=*" %%A IN (`WHERE identify.exe ^| FINDSTR /I /R ".*ImageMagick.*identify.exe$"`) DO SET "IDENTIFY=""%%A^""
+REM "IDENTIFY=""%%A^""
 
 :----------------------------------------------------------------------------------
 
@@ -40,5 +39,5 @@ FOR %%G IN (*.jpg) DO (
 :----------------------------------------------------------------------------------
 
 REM OPEN PARENT FOLDER IN EXPLORER
-START "" /MAX "%WINDIR%\explorer.exe" "%CD%\"
+START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
 EXIT /B
