@@ -1,4 +1,6 @@
-@ECHO ON
+@ECHO OFF
+SETLOCAL ENABLEEXTENSIONS
+COLOR 0A
 TITLE File: %2  Path: %1
 
 :----------------------------------------------------------------------------------
