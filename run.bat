@@ -61,13 +61,10 @@ IF EXIST "%TMP%\opt.bat" (
 
 REM DELETE LEFTOVER BATCH FILES ON THE PC
 :END
-IF EXIST "%TMP%\ow.bat" (
-    IF EXIST "%TMP%\opt.bat" (
-        IF EXIST "run.bat" (
-            DEL /Q "%TMP%\ow.bat" "%TMP%\opt.bat" "run.bat" >NUL
-        )
-    )
-)
-
-REM RETURN TO CALLER TAG IN PARENT SCRIPT
-EXIT /B
+REM IF EXIST "%TMP%\ow.bat" (
+REM     IF EXIST "%TMP%\opt.bat" (
+REM         IF EXIST "run.bat" (
+REM             DEL /Q "%TMP%\ow.bat" "%TMP%\opt.bat" "run.bat" >NUL
+REM         )
+REM     )
+REM )
