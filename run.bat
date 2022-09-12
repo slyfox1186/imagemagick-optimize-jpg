@@ -38,8 +38,6 @@ IF EXIST "%TMP%\ow.bat" (
     GOTO END
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
-    ECHO=
-    PAUSE
     GOTO END
 )
 
@@ -52,8 +50,6 @@ IF EXIST "%TMP%\opt.bat" (
     GOTO END
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
-    ECHO=
-    PAUSE
     GOTO END
 )
 
@@ -61,6 +57,8 @@ IF EXIST "%TMP%\opt.bat" (
 
 REM DELETE LEFTOVER BATCH FILES ON THE PC
 :END
+ECHO=
+PAUSE
 REM IF EXIST "%TMP%\ow.bat" (
 REM     IF EXIST "%TMP%\opt.bat" (
 REM         IF EXIST "run.bat" (
