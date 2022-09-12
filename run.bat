@@ -32,27 +32,37 @@ IF ERRORLEVEL 1 GOTO OPT
 
 :----------------------------------------------------------------------------------------------
 
+REM CALL OVERWRITE SCRIPT
 :OW
 IF EXIST "%TMP%\ow.bat" (
     CALL "%TMP%\ow.bat" "%~dp0"
-    EXIT /B
+    GOTO END
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
     ECHO=
     PAUSE
-    EXIT /B
+    GOTO END
 )
-
 
 :----------------------------------------------------------------------------------------------
 
+REM CALL DEFAULT OPTIMIZE SCRIPT
 :OPT
 IF EXIST "%TMP%\opt.bat" (
     CALL "%TMP%\opt.bat" "%~dp0"
-    EXIT /B
+    GOTO END
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
     ECHO=
     PAUSE
-    EXIT /B
+    GOTO END
 )
+
+:----------------------------------------------------------------------------------------------
+
+REM DELETE LEFTOVER BATCH FILES ON THE PC
+:END
+IF EXIST "run.bat" DEL /Q "run.bat" >NUL
+IF EXIST "%TMP%\ow.bat" DEL /Q "%TMP%\ow.bat" >NUL
+IF EXIST "%TMP%\opt.bat" DEL /Q "%TMP%\opt.bat" >NUL
+EXIT /B
