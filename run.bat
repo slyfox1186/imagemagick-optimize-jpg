@@ -62,7 +62,9 @@ IF EXIST "%TMP%\opt.bat" (
 
 REM DELETE LEFTOVER BATCH FILES ON THE PC
 :END
-IF EXIST "run.bat" DEL /Q "run.bat" >NUL
 IF EXIST "%TMP%\ow.bat" DEL /Q "%TMP%\ow.bat" >NUL
 IF EXIST "%TMP%\opt.bat" DEL /Q "%TMP%\opt.bat" >NUL
+REM IF EXIST "run.bat" DEL /Q "run.bat" >NUL
+ECHO=
+PAUSE
 EXIT /B
