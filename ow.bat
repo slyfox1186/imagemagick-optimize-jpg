@@ -1,6 +1,4 @@
-@ECHO OFF
-SETLOCAL ENABLEEXTENSIONS
-COLOR 0A
+@ECHO ON
 TITLE File: %2  Path: %1
 
 :----------------------------------------------------------------------------------
@@ -12,7 +10,7 @@ PUSHD "%1"
 
 REM FIND IMAGEMAGICK'S CONVERT.EXE FILE AND SET A VARIABLE TO POINT TO IT'S FULL PATH
 FOR /F "USEBACKQ TOKENS=*" %%A IN (`WHERE convert.exe ^| FINDSTR /I /R ".*ImageMagick.*convert.exe$"`) DO SET "CONVERT="%%A""
-FOR /F "USEBACKQ TOKENS=*" %%A IN (`WHERE identify.exe ^| FINDSTR /I /R ".*ImageMagick.*identify.exe$"`) DO SET "IDENTIFY=""%%A^""
+FOR /F "USEBACKQ TOKENS=*" %%B IN (`WHERE identify.exe ^| FINDSTR /I /R ".*ImageMagick.*identify.exe$"`) DO SET "IDENTIFY=""%%B^""
 REM "IDENTIFY=""%%A^""
 
 :----------------------------------------------------------------------------------
@@ -41,5 +39,7 @@ FOR %%G IN (*.jpg) DO (
 :----------------------------------------------------------------------------------
 
 REM OPEN PARENT FOLDER IN EXPLORER
-START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
+REM START "" /MAX "%WINDIR%\explorer.exe" "%CD%"
+ECHO=
+PAUSE
 EXIT /B
