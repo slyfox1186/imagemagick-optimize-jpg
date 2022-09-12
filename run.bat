@@ -1,6 +1,5 @@
 @ECHO OFF
 SETLOCAL ENABLEEXTENSIONS
-PROMPT $G
 COLOR 0A
 
 :----------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@ IF ERRORLEVEL 1 GOTO OPT
 REM CALL OVERWRITE SCRIPT
 :OW
 IF EXIST "%TMP%\ow.bat" (
-    CALL "%TMP%\ow.bat" "%~dp0"
+    CALL "%TMP%\ow.bat" "%~dp0" "%~nx0"
     GOTO END
   ) ELSE (
     ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
