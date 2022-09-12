@@ -26,7 +26,7 @@ ECHO [3]  GOTO EXIT & ECHO=
 
 CHOICE /C 123 /N & CLS
 
-IF ERRORLEVEL 3 EXIT /B
+IF ERRORLEVEL 3 GOTO :EOF
 IF ERRORLEVEL 2 GOTO OW
 IF ERRORLEVEL 1 GOTO OPT
 
@@ -41,7 +41,7 @@ IF EXIST "%TMP%\ow.bat" (
     ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
     ECHO=
     PAUSE
-    GOTO END
+    GOTO :EOF
 )
 
 :----------------------------------------------------------------------------------------------
@@ -55,16 +55,11 @@ IF EXIST "%TMP%\opt.bat" (
     ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
     ECHO=
     PAUSE
-    GOTO END
+    GOTO :EOF
 )
 
 :----------------------------------------------------------------------------------------------
 
 REM DELETE LEFTOVER BATCH FILES ON THE PC
 :END
-IF EXIST "%TMP%\ow.bat" DEL /Q "%TMP%\ow.bat" >NUL
-IF EXIST "%TMP%\opt.bat" DEL /Q "%TMP%\opt.bat" >NUL
-REM IF EXIST "run.bat" DEL /Q "run.bat" >NUL
-ECHO=
-PAUSE
-EXIT /B
+IF EXIST "run.bat" DEL /Q "run.bat" >NUL
