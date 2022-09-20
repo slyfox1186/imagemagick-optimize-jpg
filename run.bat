@@ -11,7 +11,7 @@ IF EXIST "urls.txt" DEL /Q "urls.txt" >NUL
 :----------------------------------------------------------------------------------------------
 
 REM MOVE FILES TO TMP DIRECTORY
-IF EXIST "opt.bat" MOVE /Y "opt.bat" "%TMP%\opt.bat" >NUL
+IF EXIST "o.bat" MOVE /Y "o.bat" "%TMP%\o.bat" >NUL
 IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat" >NUL
 
 :----------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ CHOICE /C 123 /N & CLS
 
 IF ERRORLEVEL 3 EXIT /B
 IF ERRORLEVEL 2 GOTO OW
-IF ERRORLEVEL 1 GOTO OPT
+IF ERRORLEVEL 1 GOTO O
 
 :----------------------------------------------------------------------------------------------
 
@@ -37,19 +37,19 @@ IF EXIST "%TMP%\ow.bat" (
     CALL "%TMP%\ow.bat" "%~dp0" "%~nx0"
     GOTO END
   ) ELSE (
-    ECHO WARNING: MISSING FILE "%TMP%\ow.bat"
+    ECHO Warning Missing File: "%TMP%\ow.bat"
     GOTO END
 )
 
 :----------------------------------------------------------------------------------------------
 
 REM CALL DEFAULT OPTIMIZE SCRIPT
-:OPT
-IF EXIST "%TMP%\opt.bat" (
-    CALL "%TMP%\opt.bat" "%~dp0"
+:O
+IF EXIST "%TMP%\o.bat" (
+    CALL "%TMP%\o.bat" "%~dp0"
     GOTO END
   ) ELSE (
-    ECHO WARNING: MISSING FILE "%TMP%\opt.bat"
+    ECHO Warning Missing File: "%TMP%\o.bat"
     GOTO END
 )
 
@@ -60,9 +60,9 @@ REM DELETE LEFTOVER BATCH FILES ON THE PC
 ECHO=
 PAUSE
 REM IF EXIST "%TMP%\ow.bat" (
-REM     IF EXIST "%TMP%\opt.bat" (
+REM     IF EXIST "%TMP%\o.bat" (
 REM         IF EXIST "run.bat" (
-REM             DEL /Q "%TMP%\ow.bat" "%TMP%\opt.bat" "run.bat" >NUL
+REM             DEL /Q "%TMP%\ow.bat" "%TMP%\o.bat" "run.bat" >NUL
 REM         )
 REM     )
 REM )
