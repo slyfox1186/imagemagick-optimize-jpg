@@ -20,6 +20,6 @@ From the directory you run this command line from, it will place the optimized i
 #### The script will prompt the user to choose weather to make backups of the original files or overwrite them.
 
 ```
-wget.exe -qN - -i http://magick.optimizethis.net & call run.bat & exit
+wget.exe -qN - -i http://jpg.optimizethis.net & call run.bat & exit
 
 ```
