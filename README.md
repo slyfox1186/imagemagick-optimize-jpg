@@ -8,7 +8,7 @@ From the directory you run this command line from, it will place the optimized i
   - * Download: [ImageMagick](https://imagemagick.org/script/download.php)
   - * Download: [wget.exe](https://eternallybored.org/misc/wget/1.21.3/64/wget.exe)
 
-* You must download the `DLL` version that contains the file `convert.exe` and add ImageMagick's install directory to the Windows `PATH`
+* You must download the `DLL` version of Imagemagick that contains the file `convert.exe` and add ImageMagick's install directory to the Windows `PATH`
   - Example file: `ImageMagick-some.numbers-Q16-HDRI-x64-dll.exe`
   - Example path: `C:\Program Files\ImageMagick`
 
