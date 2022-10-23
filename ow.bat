@@ -31,7 +31,7 @@ FOR %%G IN (*.jpg) DO (
         -auto-level -enhance -interlace none -colorspace sRGB "%TMP%\jpg-cache\%%~nG.mpc" & CLS
         IF EXIST "%TMP%\jpg-cache\%%~nG.mpc" (
             "%CONVERT%" "%TMP%\jpg-cache\%%~nG.mpc" -monitor "%CD%\%%~nG.jpg" & CLS
-            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc" >NUL
+            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc" >NUL 2>&1
         )
     )
 )
