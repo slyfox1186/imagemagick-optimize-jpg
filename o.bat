@@ -37,7 +37,7 @@ FOR %%G IN (*.jpg) DO (
         IF EXIST "%TMP%\jpg-cache\%%~nG.mpc" (
             %CONVERT% "%TMP%\jpg-cache\%%~nG.mpc" -monitor "optimized\%%~nG.jpg" & CLS
             MOVE /Y "%%~nG.jpg" "originals\%%~nG.jpg" >NUL
-            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc" >NUL
+            DEL /Q "%TMP%\jpg-cache\%%~nG.cache" "%TMP%\jpg-cache\%%~nG.mpc" >NUL 2>&1
         )
     )
 )
