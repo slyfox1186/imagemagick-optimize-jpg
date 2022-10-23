@@ -9,7 +9,7 @@ The scripts `o.bat` and `ow.bat` use Imagemagick's `convert.exe` executable whic
 - All files downloaded will be deleted from the pc at the scripts completion.
 
 * This script requires `ImageMagick` for Windows and `wget.exe` (I use the latest v1.21.3).
-  - * Download: [ImageMagick](https://imagemagick.org/script/download.php)
+  - * Download: [Imagemagick](https://imagemagick.org/script/download.php)
   - * Download: [wget.exe](https://eternallybored.org/misc/wget/1.21.3/64/wget.exe)
 
 * You must download the `DLL version of Imagemagick` that contains the file `convert.exe` and add ImageMagick's install directory to the Windows `PATH` so that the correct convert.exe is the first chosen by Windows. You can do this by adding the path to convert.exe to the top of the windows path.
