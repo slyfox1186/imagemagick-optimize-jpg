@@ -8,7 +8,7 @@ The scripts `o.bat` and `ow.bat` use Imagemagick's `convert.exe` executable whic
 
 - All files downloaded will be deleted from the pc at the scripts completion.
 
-- This script requires:
+### This script requires:
   - DLL version of Imagemagick
     - [Imagemagick](https://imagemagick.org/script/download.php)
   - WGET (I use the latest v1.21.3).
