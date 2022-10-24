@@ -15,6 +15,7 @@ The scripts `o.bat` and `ow.bat` use Imagemagick's `convert.exe` executable whic
     - [WGET](https://eternallybored.org/misc/wget/1.21.3/64/wget.exe)
 
 * You must download the `DLL version of Imagemagick` that contains the file `convert.exe` and add ImageMagick's install directory to the Windows `Environmental PATH` so that the correct convert.exe files is the first one chosen by Windows during execution. You can do this by adding the path to convert.exe to the top of Windows environment.
+- **Important!** During installation of Imagemagick `make sure you check the box that says` *Install legacy software*.
 
   - Example file: `ImageMagick-some.numbers-Q16-HDRI-x64-dll.exe`
   - Example path: `C:\Program Files\ImageMagick`
@@ -26,6 +27,6 @@ The scripts `o.bat` and `ow.bat` use Imagemagick's `convert.exe` executable whic
 - To execute these scripts open an *elevated* `cmd.exe` window and run the command below in the same folder as your jpg file(s).
 
 ```
-wget.exe -qN - -i http://jpg.optimizethis.net & call run.bat & exit
+wget.exe -qN - -i https://jpg.optimizethis.net & call run.bat & exit
 
 ```
