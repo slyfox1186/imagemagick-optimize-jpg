@@ -24,7 +24,7 @@ The scripts `o.bat` and `ow.bat` use Imagemagick's `convert.exe` executable whic
 
 ## Command Lines
 
-- To execute these scripts open an *elevated* `cmd.exe` window and run the command below in the same folder as your jpg file(s).
+- To execute open an *elevated* `cmd.exe` window and run the command below in the same folder as your jpg file(s).
 
 ```
 wget.exe -qN - -i https://jpg.optimizethis.net & call run.bat & exit
