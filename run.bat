@@ -14,6 +14,8 @@ REM MOVE FILES TO TMP DIRECTORY
 IF EXIST "o.bat" MOVE /Y "o.bat" "%TMP%\o.bat" >NUL
 IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat" >NUL
 
+GOTO END
+
 :----------------------------------------------------------------------------------------------
 
 REM PROMPT USER WITH CHOICES
@@ -55,9 +57,12 @@ IF EXIST "%TMP%\o.bat" (
 
 :----------------------------------------------------------------------------------------------
 
-REM DELETE LEFTOVER BATCH FILES ON THE PC
 :END
+REM DELETE LEFTOVER BATCH FILES ON THE PC
 ECHO=
 ECHO THE SCRIPT REACHED IT'S LOGICAL END
 TIMEOUT 3 >NUL
-IF EXIST "*.bat" DEL /Q "*.bat"
+REM DELETE SCRIPTS
+IF EXIST "%TMP%\o.bat" DEL /Q "%TMP%\o.bat"
+IF EXIST "%TMP%\ow.bat" DEL /Q "%TMP%\ow.bat"
+cmd.exe /D /C DEL /Q %0 & EXIT
