@@ -14,8 +14,6 @@ REM MOVE FILES TO TMP DIRECTORY
 IF EXIST "o.bat" MOVE /Y "o.bat" "%TMP%\o.bat" >NUL
 IF EXIST "ow.bat" MOVE /Y "ow.bat" "%TMP%\ow.bat" >NUL
 
-GOTO END
-
 :----------------------------------------------------------------------------------------------
 
 REM PROMPT USER WITH CHOICES
