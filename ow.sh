@@ -2,7 +2,9 @@
 
 clear
 
-# find all jpg files and convert them to cache and mpc file format then combine both files and output the optimized images
+# finds all jpg files and converts them to a .cache and .mpc cache
+# format. then combines both files and outputs a highly optimized
+# overwritten verson of the original images.
 for i in *.jpg; do
     echo -e "\\nCreating cache files: .mpc + .cache\\n"
     dimension="$(identify -format '%wx%h' "$i")"
