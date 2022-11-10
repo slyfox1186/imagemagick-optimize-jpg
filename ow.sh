@@ -2,7 +2,7 @@
 
 clear
 
-echo 'finds all jpg files and converts them to a .cache and .mpc cache.'
+echo 'finds all jpg files and converts them to a .cache and .mpc cache'
 echo 'format. then combines both files and outputs a highly optimized'
 echo 'overwritten verson of the original images.'
 echo
