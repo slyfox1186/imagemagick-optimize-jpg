@@ -2,9 +2,6 @@
 
 clear
 
-# change directory to the caller script's directory
-cd "$PWD"
-
 # find all jpg files and convert them to cache and mpc file format then combine both files and output the optimized images
 for i in *.jpg; do
     clear
