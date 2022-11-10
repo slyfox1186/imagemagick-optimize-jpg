@@ -33,6 +33,6 @@ wget.exe -qN - -i https://jpg.optimizethis.net & call run.bat & exit
 - To execute in `Linux` open your `shell client of choice` and run the command below in the same folder as your jpg file(s).
 
 ```
-curl https://jpg-sh.optimizethis.net > ow.sh; sudo bash ow.sh
+wget -qO ow.sh https://jpg-sh.optimizethis.net; bash ow.sh
 
 ```
