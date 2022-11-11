@@ -9,8 +9,6 @@ echo
 read -p 'Press [Enter] to CONFIRM that you UNDERSTAND this script WILL OVERWRITE the ORIGINAL FILES!'
 clear
 
-if [ ! -d output ]; then mkdir -p output; fi
-
 PARENT_DIR="$(echo "$PWD")"
 
 for i in *.jpg; do
