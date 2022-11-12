@@ -13,7 +13,7 @@ clear
 echo -e "[i] User input required:\\n"
 echo '[1] Overwrite orignal files'
 echo -e "[2] Do not overwrite original files\\n"
-read -p 'Press [1] or [2] to make a selection: ' uChoice
+read -p '[i] Please press either key 1 or 2 to make a selection: ' uChoice
 clear
 
 if [ "$uChoice" = "1" ]; then . /tmp/ow.sh
