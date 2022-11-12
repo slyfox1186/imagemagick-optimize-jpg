@@ -15,7 +15,7 @@ clear
 
 if [[ "$uChoice" != "Yes" ]]; then
     echo -e "[i] You must enter Yes 'exactly as shown' to continue the scripts execution.\\n"
-    read -p '[i] Press [Enter] to start over or [^C] or [^Z] to exit terminal.'
+    read -p '[i] Press Enter to start over or ^Z to exit.'
     bash "$0"
     exit 1
 elif [[ "$uChoice" = "Yes" ]]; then
