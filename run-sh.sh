@@ -2,13 +2,15 @@
 
 clear
 
-# Delete any useless files
+# delete any useless files
+if [ -f index.html ]; then rm index.html; fi
 if [ -f urls-sh.txt ]; then rm urls-sh.txt; fi
 
 # move scripts to /tmp directory
 if [ -f o.sh ]; then mv -f o.sh /tmp; fi
 if [ -f ow.sh ]; then mv -f ow.sh /tmp; fi
 
+# get user input
 clear
 echo -e "[i] Input a number to make a selection\\n"
 echo '[1] Overwrite orignal files'
@@ -16,6 +18,7 @@ echo -e "[2] Do not overwrite original files\\n"
 read uChoice
 clear
 
+# compare user input to get the correct next step
 if [ "$uChoice" = "1" ]; then . /tmp/ow.sh
 elif [ "$uChoice" = "2" ]; then . /tmp/o.sh
 else
@@ -27,6 +30,5 @@ else
 fi
 
 # delete all scripts from pc
-if [ -f /tmp/o.sh ]; then rm /tmp/o.sh ; fi
-if [ -f /tmp/ow.sh ]; then rm /tmp/ow.sh; fi
-if [ -f "$0" ]; then rm -- "$0"; fi
+DEL_FILES=( /tmp/o.sh /tmp/ow.sh $0 )
+for i in ${DEL_FILES[@]}; do rm "$i"; done
