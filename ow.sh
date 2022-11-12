@@ -48,10 +48,6 @@ elif [[ "$uChoice" = "Yes" ]]; then
     done
 fi
 
-echo -e "\\n[i] The script has reached it's end.\\n"
-read -p '[i] Press Enter to exit'
-clear
-
 # unset variables
 unset dimension
 
