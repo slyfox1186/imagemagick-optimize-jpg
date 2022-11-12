@@ -1,1 +1,3 @@
+https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/o.sh
 https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/ow.sh
+https://raw.githubusercontent.com/slyfox1186/imagemagick-optimize-jpg/main/run-sh.sh
