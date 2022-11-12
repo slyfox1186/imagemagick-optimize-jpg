@@ -19,7 +19,6 @@ if [[ "$uChoice" != "Yes" ]]; then
     bash "$0"
     exit 1
 elif [[ "$uChoice" = "Yes" ]]; then
-
     for i in *.jpg; do
         echo -e "\\nCreating two temporary cache files: ${i%%.jpg}.mpc + ${i%%.jpg}.cache\\n"
         dimension="$(identify -format '%wx%h' "$i")"
