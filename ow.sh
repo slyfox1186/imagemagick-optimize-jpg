@@ -10,7 +10,7 @@ echo '    and compiles a highly optimized version and then stores the output by 
 echo
 echo '[i] To continue the scripts execution you must confirm that you understand it WILL OVERWRITE THE ORIGINAL FILES!'
 echo
-read -p "[i] Please enter 'Yes' to confirm overwrite: " uChoice
+read -p "[i] Please enter 'Yes' to continue the scripts execution: " uChoice
 clear
 
 if [[ "$uChoice" != "Yes" ]]; then
