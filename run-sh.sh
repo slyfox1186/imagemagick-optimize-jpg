@@ -10,8 +10,18 @@ if [ -f urls-sh.txt ]; then rm urls-sh.txt; fi
 if [ -f o.sh ]; then mv -f o.sh /tmp; fi
 if [ -f ow.sh ]; then mv -f ow.sh /tmp; fi
 
-# get user input
+# explain purpose of script to user
 clear
+echo "[i] This script locates and stores the paths of each jpg file found in the script's directory, and"
+echo '    from each match ImageMagick creates a set of temporary cache files (outputs to /tmp).'
+echo
+echo '[i] ImageMagick then utilizes each temporary cache file by running an advanced algorithm that'
+echo '    combines the two files data and outputs a highly optimized version of the original file.'
+echo
+read -p '[i] Press Enter to continue.'
+clear
+
+# get user input
 echo -e "[i] Input a number to make a selection\\n"
 echo '[1] Overwrite orignal files'
 echo -e "[2] Do not overwrite original files\\n"
