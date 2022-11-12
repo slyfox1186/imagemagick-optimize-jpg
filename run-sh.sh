@@ -12,10 +12,10 @@ if [ -f ow.sh ]; then mv -f ow.sh /tmp; fi
 
 # explain purpose of script to user
 clear
-echo -e "[i] This script ${Green}locates${EC} and ${Green}stores${EC} the ${Purple}path${EC} of each ${Yellow}.${Blue}jpg${EC} file it ${Green}finds${EC} and then uses ${Yellow}each"
-echo -e "    match${EC} to ${Green}create${EC} a set of ${Blue}temporary cache files${EC} ${Red}(${Green}stored in ${Blue}/tmp${Red})${EC}."
+echo -e "[i] This script locates and stores the path of each .jpg file it finds and then uses each"
+echo -e "    match to create a set of temporary cache files (stored in /tmp)."
 echo
-echo -e "[i] Both ${Pink}temporary ${Purple}cache ${Blue}files are ${Yellow}utilized${EC} using an ${Orange}advanced ${Purple}algorithm that"
+echo -e "[i] Both temporary cache files are utilized using an advanced algorithm that"
 echo -e "    compiles the data from each file and outputs a highly optimized version of the original file."
 echo
 read -p '[i] Press Enter to continue.'
