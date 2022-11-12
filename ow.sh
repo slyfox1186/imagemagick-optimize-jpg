@@ -4,12 +4,12 @@ clear
 
 # explain purpose of script to user
 echo "[i] This script locates and stores the paths of each jpg file found in the script's directory, and"
-echo '    from each match it finds and creates a set of temporary cache files.'
+echo '    from each match ImageMagick creates a set of temporary cache files (outputs to /tmp).'
 echo
-echo '[i] ImageMagick will then utilize each cache file created by running an advanced algorithm that combines'
-echo '    and compiles a highly optimized version and then stores the output by overwriting the original image.'
+echo '[i] ImageMagick then utilizes each temporary cache file by running an advanced algorithm that'
+echo '    combines the two files data and outputs a highly optimized version of the original file.'
 echo
-echo '[i] To continue the scripts execution you must confirm that you understand it WILL OVERWRITE THE ORIGINAL FILES!'
+echo '[i] To continue, you must confirm that you understand that the ORIGINAL FILES will be OVERWRITTEN!'
 echo
 read -p "[i] Please enter 'Yes' to continue the scripts execution: " uChoice
 clear
