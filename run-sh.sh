@@ -12,19 +12,19 @@ if [ -f ow.sh ]; then mv -f ow.sh /tmp; fi
 
 # explain purpose of script to user
 clear
-echo "[i] This script locates and stores the paths of each jpg file found in the script's directory, and"
-echo '    from each match ImageMagick creates a set of temporary cache files (outputs to /tmp).'
+echo -e "[i] This script ${Green}locates${EC} and ${Green}stores${EC} the ${Purple}path${EC} of each ${Yellow}.${Blue}jpg${EC} file it ${Green}finds${EC} and then uses ${Yellow}each"
+echo -e "    match${EC} to ${Green}create${EC} a set of ${Blue}temporary cache files${EC} ${Red}(${Green}stored in ${Blue}/tmp${Red})${EC}."
 echo
-echo '[i] ImageMagick then utilizes each temporary cache file by running an advanced algorithm that'
-echo '    combines the two files data and outputs a highly optimized version of the original file.'
+echo -e "[i] Both ${Pink}temporary ${Purple}cache ${Blue}files are ${Yellow}utilized${EC} using an ${Orange}advanced ${Purple}algorithm that"
+echo -e "    compiles the data from each file and outputs a highly optimized version of the original file."
 echo
 read -p '[i] Press Enter to continue.'
 clear
 
 # get user input
 echo -e "[i] Input a number to make a selection\\n"
-echo '[1] Overwrite orignal files'
-echo -e "[2] Do not overwrite original files\\n"
+echo -e "[1] Overwrite orignal files"
+echo -e "[2] Don't overwrite original files\\n"
 read uChoice
 clear
 
@@ -40,7 +40,7 @@ else
 fi
 
 # delete all scripts from pc
-DEL_FILES=( /tmp/o.sh /tmp/ow.sh $0 )
+DEL_FILES=( /tmp/o.sh /tmp/ow.sh ${0:2} )
 for i in ${DEL_FILES[@]}; do rm "$i"; done
 
 # unset variables
