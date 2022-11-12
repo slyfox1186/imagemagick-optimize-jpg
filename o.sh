@@ -30,9 +30,3 @@ for i in *.jpg; do
         fi
     done
 done
-
-# unset variables
-unset dimension
-
-# delete this script from pc
-# if [ -f "$0" ]; then rm -- "$0"; fi
