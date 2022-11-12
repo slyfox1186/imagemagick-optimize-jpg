@@ -2,18 +2,6 @@
 
 clear
 
-# explain purpose of script to user
-echo "[i] This script locates and stores the paths of each jpg file found in the script's directory, and"
-echo '    from each match ImageMagick creates a set of temporary cache files (outputs to /tmp).'
-echo
-echo '[i] ImageMagick then utilizes each temporary cache file by running an advanced algorithm that'
-echo '    combines the two files data and outputs a highly optimized version of the original file.'
-echo
-echo "[i] The optimized versions of each image will be stored in inside a directory called 'output'"
-echo
-read -p '[i] Press Enter to continue.'
-clear
-
 # make output directory
 if [ ! -d output ]; then mkdir -p output; fi
 
