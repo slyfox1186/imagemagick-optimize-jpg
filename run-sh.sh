@@ -40,7 +40,7 @@ else
 fi
 
 # delete all scripts from pc
-DEL_FILES=( /tmp/o.sh /tmp/ow.sh ${0:2} )
+DEL_FILES=( /tmp/o.sh /tmp/ow.sh $0 )
 for i in ${DEL_FILES[@]}; do rm "$i"; done
 
 # unset variables
