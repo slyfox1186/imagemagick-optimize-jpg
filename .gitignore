@@ -2,5 +2,6 @@
 
 README.md
 urls.txt
-*.html
+index.html
+index.html.tmp
 *.php
