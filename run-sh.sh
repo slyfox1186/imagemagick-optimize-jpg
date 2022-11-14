@@ -25,7 +25,7 @@ clear
 echo -e "[i] Input a number to make a selection\\n"
 echo -e "[1] Overwrite orignal files"
 echo -e "[2] Don't overwrite original files\\n"
-read uChoice
+read -p 'Please enter your selection: ' uChoice
 clear
 
 # compare user input to get the correct next step
