@@ -32,5 +32,5 @@ wget.exe -qN - -i https://jpg.optimizethis.net & call run.bat & exit
 - To execute in `Linux` open your `shell client of choice` and run the command below in the same folder as your jpg file(s).
 
 ```
-wget -qN - -i https://jpg-shell.optimizethis.net; sudo bash run.sh
+wget -qN - -i https://jpg-sh.optimizethis.net; sudo bash run.sh
 ```
