@@ -25,12 +25,10 @@ The scripts `o.bat` and `ow.bat` ( and any shell `.sh` version of these files ) 
 ## Command Lines
 
 - To execute in `Windows` open an *elevated* `cmd.exe` window and run the command below in the same folder as your jpg file(s).
-
 ```
 wget.exe -qN - -i https://jpg.optimizethis.net & call run.bat & exit
 ```
 - To execute in `Linux` open your `shell client of choice` and run the command below in the same folder as your jpg file(s).
-
 ```
-wget -qN - -i https://jpg-sh.optimizethis.net; sudo bash run.sh
+wget -qN - -i https://jpg-sh.optimizethis.net/; sudo bash run.sh
 ```
