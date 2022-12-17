@@ -37,7 +37,6 @@ else
     clear
     read -p 'Input Error: Press enter to start over.'
     unset uChoice
-    clear
     bash "${0}"
 fi
 
