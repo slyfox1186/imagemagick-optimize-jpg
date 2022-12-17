@@ -36,6 +36,7 @@ elif [ "${uChoice}" = "2" ]; then bash '/tmp/o.sh'
 else
     clear
     read -p 'Input Error: Press enter to start over.'
+    unset uChoice
     clear
     bash "${0}"
 fi
